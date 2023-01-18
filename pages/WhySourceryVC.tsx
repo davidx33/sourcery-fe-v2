@@ -6,7 +6,7 @@ const Hero: NextPage = () => {
   return (
     <div className="flex flex-col px-10 py-10">
       <h1 className="text-center">Why Sourcery?</h1>
-      <div className="flex flex-row pt-10">
+      <div className="flex flex-row pt-10 ">
         <div className="bg-gradient-to-r from-violet-700 to-blue-300 w-2/4 text-left">
           <div className="px-10 py-10">
             <h2 className="text-2xl">
