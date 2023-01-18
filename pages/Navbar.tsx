@@ -10,7 +10,7 @@ const Navbar: NextPage = () => {
         <div className="text-white text-2xl text-extrabold font-sans font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent animate-none">
           Sourcery
         </div>
-        <Image src={image} alt="" className="w-8 h-8 pl-2"/>
+        
       </div>
       <div className="flex flex-row">
         <h2 className="text-white cursor-pointer pr-5">About</h2>

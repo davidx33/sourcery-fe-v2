@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import type { NextPage } from "next";
-import Image from "next/image";
 import WhySourceryVC from "./WhySourceryVC";
+import HowItWorksVC from "./HowItWorksVC";
+import HowItWorks from "./HowItWorks";
+import WhySourcery from "./WhySourcery";
 
 // implementation:
 // have each button click change state. based on what state is toggled to, display some various imported components
@@ -41,9 +43,13 @@ const VCorNot: NextPage = () => {
         </div>
       </div>
       {!isVC ? (
-        <div className="flex flex-col text-center text-5xl"></div>
+        <div className="flex flex-col">
+          <HowItWorks />
+          <WhySourcery />
+        </div>
       ) : (
-        <div className="flex flex-col text-center text-5xl">
+        <div className="flex flex-col">
+          <HowItWorksVC />
           <WhySourceryVC />
         </div>
       )}
