@@ -8,5 +8,24 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-typewriter') ({
+      wordsets: {
+        metrics: {
+          words: ['YoY Headcount Growth', 'Total $ Raised', 'Recent Round $ Amount', 'Founding Year', 'Geography'],
+          delay: 1,
+          writeSpeed: 0.08,
+          eraseSpeed: 0.1,
+          repeat: -1
+        },
+        industries: {
+          words: ['Cannabis', 'Web3', 'Gaming', 'B2B SaaS', 'AI'],
+          delay: 1,
+          writeSpeed: 0.08,
+          eraseSpeed: 0.1,
+          repeat: -1
+        },
+      }
+    })
+  ],
 };
