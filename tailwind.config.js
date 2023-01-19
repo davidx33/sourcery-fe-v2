@@ -19,8 +19,6 @@ module.exports = {
         industries: {
           words: ['Cannabis', 'Web3', 'Gaming', 'B2B SaaS', 'AI'],
           delay: 1,
-          writeSpeed: 0.08,
-          eraseSpeed: 0.1,
           repeat: -1
         },
       }
