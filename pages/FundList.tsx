@@ -1,5 +1,6 @@
 import React from "react";
 import Image from 'next/image';
+import Link from "next/link";
 import type { NextPage } from "next";
 
 const FundList: NextPage = () => {
@@ -17,7 +18,9 @@ const FundList: NextPage = () => {
           minim veniam
         </div>
         <div className="pt-5 flex flex-row items-center">
-          <button className="bg-white py-3 px-3 rounded-md pr-5 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">Sign up</button>
+          <Link href="/api/auth/signin" className="bg-white py-3 px-3 rounded-md pr-5 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
+            Sign up
+          </Link>
           <h1 className="text-white pl-5">Contact sales ➞</h1>
         </div>
       </div>

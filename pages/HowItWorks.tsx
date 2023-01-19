@@ -8,9 +8,7 @@ import ipo from "./images/ipo.jpg";
 const HowItWorks: NextPage = () => {
   return (
     <div className="flex flex-col py-20">
-      <div className="text-center text-extrabold pb-10">
-        <h1 className="text-8xl">How it works</h1>
-      </div>
+      <h1 className="text-center font-bold pb-10 text-8xl">How it works</h1>
       <div className="bg-gradient-to-r from-fuchsia-500 to-blue-500 rounded-xl">
         <div className="flex flex-col px-5 py-16">
           <h1 className="text-5xl text-center">
