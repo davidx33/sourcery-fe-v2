@@ -11,9 +11,7 @@ import peterandmusk from "./images/elonandpeter.jpg";
 const HowItWorksVC: NextPage = () => {
   return (
     <div className="flex flex-col py-20">
-      <div className="text-center text-extrabold">
-        <h1 className="text-8xl">How it works</h1>
-      </div>
+      <h1 className="text-center font-bold pb-10 text-8xl">How it works</h1>
       <div className="flex flex-row text-white text-left text-5xl pt-16 px-10 justify-evenly items-center">
         <div className="flex flex-col text-white pr-5 w-1/3">
           <Image src={optin} alt="" width={80} height={80} />
