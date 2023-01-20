@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
-import Navbar from './Navbar';
-import Hero from './Hero';
-import VCorNot from './VCorNot';
-import Interested from './Interested';
-import Footer from "./Footer"
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import VCorNot from './components/VCorNot';
+import Interested from './components/Interested';
+import Footer from "./components/Footer"
 
 const Home: NextPage = () => {
   return (
