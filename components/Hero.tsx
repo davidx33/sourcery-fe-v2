@@ -2,8 +2,7 @@ import React from "react";
 import type { NextPage } from "next";
 import Image from 'next/image';
 import Link from "next/link";
-import iphonesketch from "../pages/images/iphonesketch.png";
-import macsketch from "../pages/images/macsketch.png";
+import mac_payouts_sketch from "../pages/images/macbook_sketch_payouts.png"
 
 const Hero: NextPage = () => {
   return (
@@ -27,7 +26,7 @@ const Hero: NextPage = () => {
         </div>
       </div>
       <div className="flex flex-row ">
-        <Image src={macsketch} alt="" />
+        <Image src={mac_payouts_sketch} alt="" />
       </div>
     </div>
   );
