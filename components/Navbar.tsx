@@ -57,7 +57,9 @@ const Navbar: NextPage = () => {
         </Link>
       </div>
       <div className="flex flex-row">
-        <h2 className="text-white cursor-pointer pr-5 font-semibold">Profile</h2>
+        <h2 className="text-white cursor-pointer pr-5 font-semibold">
+          <Link href="/profile">Profile</Link>
+        </h2>
         <h2 className="text-white cursor-pointer pl-5 font-semibold">
           <Link href="/form">
             <h1>Product</h1>
