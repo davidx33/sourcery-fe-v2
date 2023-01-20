@@ -16,7 +16,7 @@ const Interested: NextPage = () => {
             </div>
             <div className="flex flex-col w-2/4">
               <div className="text-5xl pb-6 font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent animate-none">
-                Interested in sourcing the next big thing?
+                Want to learn more about Sourcery?
               </div>
               <div className="text-2xl ">
                 Talk to our team today for more details.
