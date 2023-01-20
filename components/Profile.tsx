@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import type { NextPage } from "next";
-import Footer from "./Footer";
+import CompaniesSourced from "./ProfileCompaniesSourcedBody";
+import Footer from "./Footer"
+import ProfilePayoutsBody from "./ProfilePayoutsBody";
 
 const FormHeader: NextPage = () => {
   const [isCompaniesSourced, setIsCompaniesSourced] = useState(true);
@@ -13,13 +15,12 @@ const FormHeader: NextPage = () => {
             : "Total money received: $523"}
         </h1>
         <h2 className="text-2xl text-white">
- 
           {isCompaniesSourced
             ? "Companies sourced today: 3"
             : "Total money received today: $33"}
         </h2>
       </div>
-      <div className="flex flex-row">
+      <div className="flex flex-row pb-10">
         <button
           className={
             isCompaniesSourced
@@ -46,8 +47,8 @@ const FormHeader: NextPage = () => {
           Payouts received
         </button>
       </div>
-
-      <Footer />
+      {isCompaniesSourced ? <CompaniesSourced/> : <ProfilePayoutsBody/>}
+      <Footer/>
     </div>
   );
 };

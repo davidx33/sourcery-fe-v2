@@ -10,7 +10,7 @@ const Hero: NextPage = () => {
     <div className="flex flex-row text-left py-8 justify-between px-20 items-center">
       <div className="flex flex-col w-2/4">
         <div className="text-8xl">
-          <h2 className="text-left text-8xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-500 bg-clip-text text-transparent ">
+          <h2 className="text-left text-8xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-500 bg-clip-text text-transparent">
             Find Companies. Get Paid.
           </h2>
         </div>

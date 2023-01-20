@@ -71,8 +71,8 @@ const FormHeader: NextPage = () => {
             </button>
           </div>
         </div>
+        <Footer/>
       </div>
-      <Footer />
     </div>
   );
 };
