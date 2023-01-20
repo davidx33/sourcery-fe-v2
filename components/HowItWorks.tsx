@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import type { NextPage } from "next";
-import ramp from "./images/ramplogo.png";
-import earlybezos from "./images/bezosearly.jpg";
-import ipo from "./images/ipo.jpg";
+import ramp from "../pages/images/ramplogo.png";
+import earlybezos from "../pages/images/bezosearly.jpg";
+import ipo from "../pages/images/ipo.jpg";
 
 const HowItWorks: NextPage = () => {
   return (
@@ -57,7 +57,7 @@ const HowItWorks: NextPage = () => {
           </div>
         </div>
         <div className="flex justify-center pb-16">
-          <button className="bg-white text-black rounded-xl">
+          <button className="bg-white text-black rounded-full">
             <h2 className="px-5 py-5">Get started ➞</h2>
           </button>
         </div>

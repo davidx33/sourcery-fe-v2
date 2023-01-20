@@ -2,8 +2,8 @@ import React from "react";
 import type { NextPage } from "next";
 import Image from 'next/image';
 import Link from "next/link";
-import macsketch from "./images/macsketch.png";
-import iphonesketch from "./images/iphonesketch.png"
+import iphonesketch from "../pages/images/iphonesketch.png";
+import macsketch from "../pages/images/macsketch.png";
 
 const Hero: NextPage = () => {
   return (

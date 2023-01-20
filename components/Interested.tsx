@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import type { NextPage } from "next";
-import stripe from "./images/stripelogo.png";
-import google from "./images/googlelogo.png"
+import stripe from "../pages/images/stripelogo.png";
+import google from "../pages/images/googlelogo.png"
 
 const Interested: NextPage = () => {
   return (

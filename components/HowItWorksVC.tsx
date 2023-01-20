@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import type { NextPage } from "next";
-import optin from "./images/optin.png";
-import receive from "./images/receive.png";
-import evaluate from "./images/evaluate.png";
-import steve from "./images/stevejobs.png";
-import greenlight from "./images/optinimage.jpg";
-import peterandmusk from "./images/elonandpeter.jpg";
+import optin from "../pages/images/optin.png";
+import receive from "../pages/images/receive.png";
+import evaluate from "../pages/images/evaluate.png";
+import steve from "../pages/images/stevejobs.png";
+import greenlight from "../pages/images/optinimage.jpg";
+import peterandmusk from "../pages/images/elonandpeter.jpg";
 
 const HowItWorksVC: NextPage = () => {
   return (
