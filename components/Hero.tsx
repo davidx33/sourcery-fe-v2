@@ -1,8 +1,8 @@
 import React from "react";
 import type { NextPage } from "next";
 import Image from 'next/image';
-import Link from "next/link";
 import mac_payouts_sketch from "../pages/images/macbook_sketch_payouts.png"
+import SignUpButton from "./SignUpButton";
 
 const Hero: NextPage = () => {
   return (
@@ -19,9 +19,7 @@ const Hero: NextPage = () => {
           minim veniam
         </div>
         <div className="pt-5 flex flex-row items-center">
-          <Link href="/api/auth/signin" className="bg-white py-3 px-8 rounded-full font-semibold text-black">
-            Sign up
-          </Link>
+          <SignUpButton />
           <h1 className="text-white pl-5">Contact sales ➞</h1>
         </div>
       </div>

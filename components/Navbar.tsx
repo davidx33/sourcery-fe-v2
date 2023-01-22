@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { NextPage } from "next";
-import { signOut, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
+import SignUpButton from "./SignUpButton";
 
 const Navbar: NextPage = () => {
   const { data: session, status } = useSession();
@@ -18,18 +19,13 @@ const Navbar: NextPage = () => {
   if (!session) {
     content = (
       <>
-        <Link
-          href="/api/auth/signin"
-          className="text-black bg-white px-5 py-2 rounded-full font-semibold"
-        >
-          Sign up
-        </Link>
-        <Link
-          href="/api/auth/signin"
+        <SignUpButton />
+        <button
+          onClick={() => signIn('Google', { callbackUrl: '/dashboard' })}
           className="text-white px-5 py-2 font-semibold"
         >
           Log in
-        </Link>
+        </button>
       </>
     );
   }
@@ -38,7 +34,9 @@ const Navbar: NextPage = () => {
     content = (
       <>
         <h3 className="text-white font-semibold underline">
-          {session.user?.name}
+          <Link href="/profile">
+            {session.user?.name}
+          </Link>
         </h3>
         <button className="px-5 py-3 rounded-md" onClick={() => signOut()}>
           <a className="text-white font-semibold" href="#">
@@ -57,11 +55,11 @@ const Navbar: NextPage = () => {
         </Link>
       </div>
       <div className="flex flex-row">
-        <h2 className="text-white cursor-pointer pr-5 font-semibold">
+        {/* <h2 className="text-white cursor-pointer pr-5 font-semibold">
           <Link href="/profile">Profile</Link>
-        </h2>
+        </h2> */}
         <h2 className="text-white cursor-pointer pl-5 font-semibold">
-          <Link href="/form">
+          <Link href="/dashboard">
             <h1>Product</h1>
           </Link>
         </h2>
