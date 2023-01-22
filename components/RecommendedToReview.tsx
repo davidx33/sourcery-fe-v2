@@ -2,7 +2,6 @@ import React from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
 import ProfileHeader from "../components/ProfileHeader";
-import MyCompanies from "../components/MyCompanies";
 import peterthiel from "../pages/images/peter_thiel.jpg";
 import linkedin from "../pages/images/linkedin.png";
 import twitter from "../pages/images/twitter.png";
@@ -13,18 +12,9 @@ import anduril from "../pages/images/anduril.jpg";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-const Profile: NextPage = () => {
+const RecommendedToReview: NextPage = () => {
   return (
-    <div className="bg-black px-16">
-      <div className="pb-10">
-        <Navbar />
-      </div>
-      <div className="pb-5">
-        <ProfileHeader />
-      </div>
-      <div className="pb-5">
-        <MyCompanies />
-      </div>
+    <div>
       <div className="px-10 py-10 bg-neutral-800 rounded-xl">
         <div className="flex flex-col">
           <div className="text-white text-2xl font-extrabold pb-10">
@@ -81,9 +71,8 @@ const Profile: NextPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
 
-export default Profile;
+export default RecommendedToReview;
