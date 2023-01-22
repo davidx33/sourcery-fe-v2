@@ -21,7 +21,7 @@ const Navbar: NextPage = () => {
       <>
         <SignUpButton />
         <button
-          onClick={() => signIn('Google', { callbackUrl: '/dashboard' })}
+          onClick={() => signIn('Google', { callbackUrl: '/profile' })}
           className="text-white px-5 py-2 font-semibold"
         >
           Log in
@@ -53,16 +53,6 @@ const Navbar: NextPage = () => {
         <Link href="/">
           <h1 className="text-white text-2xl font-bold">Sourcery</h1>
         </Link>
-      </div>
-      <div className="flex flex-row">
-        {/* <h2 className="text-white cursor-pointer pr-5 font-semibold">
-          <Link href="/profile">Profile</Link>
-        </h2> */}
-        <h2 className="text-white cursor-pointer pl-5 font-semibold">
-          <Link href="/dashboard">
-            <h1>Product</h1>
-          </Link>
-        </h2>
       </div>
       <div className="flex flex-row items-center justify-end pr-5">
         {content}

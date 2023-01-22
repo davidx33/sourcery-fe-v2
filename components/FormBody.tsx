@@ -1,7 +1,9 @@
 import React, { FC, FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
+import FormHorizontalRadio from "./FormHorizontalRadio";
 import FormInput from "./FormInput";
 import FormSelect from "./FormSelect";
+import FormTextArea from "./FormTextArea";
 
 const companySectors = [
 	"Healthcare",
@@ -13,10 +15,49 @@ const companySectors = [
 	"Other",
 ];
 
+const relevantExperiences = [
+	"Internship (1-2 years)",
+	"Research (1-2 years)",
+	"Research (3+ years)",
+	"Employment (1-2 years)",
+	"Employment (3+ years)",
+	"Leisure (this is okay too 🙂",
+];
+
+const foundingTeamQualificationOptions = [
+	["1", "1"],
+	["2", "2"],
+	["3", "3"],
+	["4", "4"],
+	["5", "5"],
+];
+
+const proprietaryOptions = [
+	["1", "1"],
+	["2", "2"],
+	["3", "3"],
+	["4", "4"],
+	["5", "5"],
+];
+
+const missionCriticalOptions = [
+	["1", "1"],
+	["2", "2"],
+	["3", "3"],
+	["4", "4"],
+	["5", "5"],
+];
+
 const FormBody: FC = () => {
 	const router = useRouter();
 	const [companyName, setCompanyName] = useState<string>("");
 	const [companySector, setCompanySector] = useState<string>("");
+	const [companyURL, setCompanyURL] = useState<string>("");
+	const [foundingTeamQualification, setFoundingTeamQualification] = useState<string>("");
+	const [proprietary, setProprietary] = useState<string>("");
+	const [missionCritical, setMissionCritical] = useState<string>("");
+	const [relevantExperience, setRelevantExperience] = useState<string>("");
+
 	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault();
 		await fetch('/api/company', {
@@ -28,24 +69,49 @@ const FormBody: FC = () => {
 			body: JSON.stringify({
 				companyName: companyName,
 				companySector: companySector,
+				companyURL: companyURL,
+				foundingTeamQualification: foundingTeamQualification,
+				proprietary: proprietary,
+				missionCritical: missionCritical,
+				relevantExperience: relevantExperience,
 			})
 		});
 		router.refresh();
-
 	}
 	return (
-		<form className="py-10">
-			<div className="grid md:grid-cols-2 md:gap-6">
-				<FormInput label="Company Name" setState={setCompanyName} inputName="company_name" state={companyName} />
-				<FormSelect label="Company Sector" setState={setCompanySector} selectName="company_sector" state={companySector} options={companySectors} />
+		<div className="flex justify-center">
+			<div className="block md:w-3/4">
+				<form className="pt-10 mb-5">
+					<div className="grid md:grid-cols-3 md:gap-6">
+						<div className="relative z-0 w-full mb-6 group">
+							<FormInput label="Company Name" setState={setCompanyName} inputName="company_name" state={companyName} />
+						</div>
+						<div className="relative z-0 w-full mb-6 group">
+							<FormInput label="AngelList/Linkedin/Crunchbase URL" setState={setCompanyURL} inputName="company_url" state={companyURL} />
+						</div>
+						<div className="relative z-0 w-full mb-6 group">
+							<FormSelect label="Company Sector" setState={setCompanySector} selectName="company_sector" state={companySector} options={companySectors} />
+						</div>
+					</div>
+					<div>
+						<FormSelect label="Relevant Sector Experience" setState={setRelevantExperience} selectName="relevant_experience" state={relevantExperience} options={relevantExperiences} />
+					</div>
+					<div className="mt-3">
+						<FormHorizontalRadio label="How qualified is the founding team considering industry specific constraints? (1=Not at all, 5=Extremely Qualified)" options={foundingTeamQualificationOptions} setState={setFoundingTeamQualification} />
+					</div>
+					<div className="mt-3">
+						<FormHorizontalRadio label="How proprietary is the technology, structure, or product of the company? (1=Not at all, 5=Extremely Proprietary)" options={proprietaryOptions} setState={setProprietary} />
+					</div>
+					<div className="mt-3">
+						<FormHorizontalRadio label="How mission critical do you see this company being to its end user? (1=Not at all, 5=Extremely Critical)" options={missionCriticalOptions} setState={setMissionCritical} />
+					</div>
+					<div className="my-5">
+						<FormTextArea label="Additional research or explanations of previous questions" rows={6} placeholder="Enter information here..." />
+					</div>
+				</form>
+				<button onClick={handleSubmit} className="text-black bg-white px-5 py-2 rounded-md font-semibold">Submit Company</button>
 			</div>
-			<button
-				onClick={handleSubmit}
-				className="text-black bg-white px-5 py-2 rounded-md font-semibold"
-			>
-				Submit
-			</button>
-		</form>
+		</div>
 	);
 };
 

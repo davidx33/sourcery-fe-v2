@@ -62,14 +62,19 @@ model Company {
   id         String       @id @default(cuid())
   name       String
   sector     String
+  url        String
   Submission Submission[]
 }
 
 model Submission {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  user      User     @relation(fields: [userId], references: [id])
-  userId    String
-  company   Company  @relation(fields: [companyId], references: [id])
-  companyId String
+  id                        String   @id @default(cuid())
+  createdAt                 DateTime @default(now())
+  user                      User     @relation(fields: [userId], references: [id])
+  userId                    String
+  company                   Company  @relation(fields: [companyId], references: [id])
+  companyId                 String
+  foundingTeamQualification String
+  proprietary               String
+  missionCritical           String
+  relevantExperience        String
 }
