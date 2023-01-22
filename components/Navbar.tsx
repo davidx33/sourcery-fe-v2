@@ -21,7 +21,7 @@ const Navbar: NextPage = () => {
       <>
         <SignUpButton />
         <button
-          onClick={() => signIn('Google', { callbackUrl: '/dashboard' })}
+          onClick={() => signIn('Google', { callbackUrl: '/profile' })}
           className="text-white px-5 py-2 font-semibold"
         >
           Log in
