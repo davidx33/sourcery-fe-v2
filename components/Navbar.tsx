@@ -54,16 +54,6 @@ const Navbar: NextPage = () => {
           <h1 className="text-white text-2xl font-semibold">Sourcery</h1>
         </Link>
       </div>
-      <div className="flex flex-row">
-        {/* <h2 className="text-white cursor-pointer pr-5 font-semibold">
-          <Link href="/profile">Profile</Link>
-        </h2> */}
-        <h2 className="text-white cursor-pointer pl-5 font-semibold">
-          <Link href="/dashboard">
-            <h1>Product</h1>
-          </Link>
-        </h2>
-      </div>
       <div className="flex flex-row items-center justify-end pr-5">
         {content}
       </div>
