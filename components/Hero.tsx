@@ -1,7 +1,6 @@
 import React from "react";
 import type { NextPage } from "next";
 import Image from 'next/image';
-import mac_payouts_sketch from "../pages/images/macbook_sketch_payouts.png"
 import SignUpButton from "./SignUpButton";
 
 const Hero: NextPage = () => {
@@ -23,8 +22,8 @@ const Hero: NextPage = () => {
           <h1 className="text-white pl-5">Contact sales ➞</h1>
         </div>
       </div>
-      <div className="flex flex-row ">
-        <Image src={mac_payouts_sketch} alt="" />
+      <div className="text-white">
+        Placeholder for YC companies animation
       </div>
     </div>
   );

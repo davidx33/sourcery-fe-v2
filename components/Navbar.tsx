@@ -51,7 +51,7 @@ const Navbar: NextPage = () => {
     <div className="bg-black flex flex-row items-center pb-5 pt-10 justify-between px-20">
       <div className="flex flex-row">
         <Link href="/">
-          <h1 className="text-white text-2xl font-semibold">Sourcery</h1>
+          <h1 className="text-white text-2xl font-bold">Sourcery</h1>
         </Link>
       </div>
       <div className="flex flex-row">
