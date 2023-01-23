@@ -1,16 +1,10 @@
 import React from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
-import ProfileHeader from "../components/ProfileHeader";
-import peterthiel from "../pages/images/peter_thiel.jpg";
-import linkedin from "../pages/images/linkedin.png";
-import twitter from "../pages/images/twitter.png";
-import circlescale from "../pages/images/circlescaleAI.png";
-import robinhood from "../pages/images/robinhoodlogo.png";
-import roblox from "../pages/images/roblox.jpg";
-import anduril from "../pages/images/anduril.jpg";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Link from "next/link";
+import bookinglayer from "../pages/images/bookinglayer.jpg";
+import snippyly from "../pages/images/snippyly.jpg";
+import vade from "../pages/images/vade.jpg";
 
 const RecommendedToReview: NextPage = () => {
   return (
@@ -23,22 +17,24 @@ const RecommendedToReview: NextPage = () => {
           <div className="flex flex-row justify-evenly">
             <div className="flex flex-row">
               <Image
-                src={roblox}
+                src={snippyly}
                 alt=""
                 width={90}
                 height={90}
                 className="rounded-full"
               />
               <div className="flex flex-col pl-5 items-center">
-                <h1 className="text-white text-2xl font-bold pb-3">Roblox</h1>
-                <button className="bg-white px-2 py-2 rounded-full">
-                  Review now
-                </button>
+                <h1 className="text-white text-2xl font-bold pb-3">Snippyly</h1>
+                <Link href="/form">
+                  <button className="bg-white px-2 py-2 rounded-full">
+                    Review now
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="flex flex-row">
               <Image
-                src={robinhood}
+                src={bookinglayer}
                 alt=""
                 width={90}
                 height={90}
@@ -46,26 +42,30 @@ const RecommendedToReview: NextPage = () => {
               />
               <div className="flex flex-col pl-5 items-center">
                 <h1 className="text-white text-2xl font-bold pb-3">
-                  Robinhood
+                  Booking Layer
                 </h1>
-                <button className="bg-white px-2 py-2 rounded-full">
-                  Review now
-                </button>
+                <Link href="/form">
+                  <button className="bg-white px-2 py-2 rounded-full">
+                    Review now
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="flex flex-row">
               <Image
-                src={anduril}
+                src={vade}
                 alt=""
                 width={90}
                 height={90}
                 className="rounded-full"
               />
               <div className="flex flex-col pl-5 items-center">
-                <h1 className="text-white text-2xl font-bold pb-3">Anduril</h1>
-                <button className="bg-white px-2 py-2 rounded-full">
-                  Review now
-                </button>
+                <h1 className="text-white text-2xl font-bold pb-3">Vade</h1>
+                <Link href="/form">
+                  <button className="bg-white px-2 py-2 rounded-full">
+                    Review now
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
