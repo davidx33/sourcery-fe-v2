@@ -1,12 +1,52 @@
 import React from "react";
+import Head from "next/head";
+import { getSession } from "next-auth/react";
+import { GetServerSideProps } from "next";
 import type { NextPage } from "next";
+import prisma from "../lib/prisma";
 import ProfileHeader from "../components/ProfileHeader";
 import MyCompanies from "../components/MyCompanies";
 import Layout from "../components/Layout";
-import Head from "next/head";
+import { Submission } from "@prisma/client";
 import RecommendedToReview from "../components/RecommendedToReview";
 
-const Profile: NextPage = () => {
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+  const session = await getSession({ req });
+  if (!session) {
+    res.statusCode = 403;
+    return {
+      props: {
+        submissions: []
+      }
+    };
+  }
+
+  const submissions = await prisma.submission.findMany({
+    where: {
+      userId: session.user?.id
+    }
+  });
+  res.statusCode = 200;
+  if (submissions !== undefined) {
+    // JSON parse and stringify is needed becase of date object that is being returned
+    return {
+      props: {
+        submissions: JSON.parse(JSON.stringify(submissions))
+      }
+    };
+  }
+  return {
+    props: {
+      submissions: []
+    }
+  };
+}
+
+type Props = {
+  submissions: Submission[];
+}
+
+const Profile: NextPage<Props> = ({ submissions }) => {
   return (
     <Layout>
       <Head>
@@ -20,12 +60,12 @@ const Profile: NextPage = () => {
         <ProfileHeader />
       </div>
       <div className="pb-5">
-        <MyCompanies />
+        <MyCompanies submissions={submissions} />
       </div>
       <div className="pb-5">
-        <RecommendedToReview/>
+        <RecommendedToReview />
       </div>
-      
+
     </Layout>
   );
 };
