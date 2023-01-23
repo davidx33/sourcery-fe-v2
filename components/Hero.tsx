@@ -60,7 +60,6 @@ const Hero: NextPage = () => {
             height={100}
           />
         </div>
-
         <div>
           <Image
             src={opensea}
