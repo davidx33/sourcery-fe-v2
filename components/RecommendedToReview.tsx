@@ -28,7 +28,7 @@ const RecommendedToReview: NextPage = () => {
               />
               <div className="flex flex-col pl-5 items-center">
                 <h1 className="text-white text-2xl font-bold pb-3">Snippyly</h1>
-                <Link href="/form">
+                <Link href="/dashboard">
                   <button className="bg-white px-2 py-2 rounded-full">
                     Review now
                   </button>
@@ -50,7 +50,7 @@ const RecommendedToReview: NextPage = () => {
                 <h1 className="text-white text-2xl font-bold pb-3">
                   Booking Layer
                 </h1>
-                <Link href="/form">
+                <Link href="/dashboard">
                   <button className="bg-white px-2 py-2 rounded-full">
                     Review now
                   </button>
@@ -70,7 +70,7 @@ const RecommendedToReview: NextPage = () => {
               />
               <div className="flex flex-col pl-5 items-center">
                 <h1 className="text-white text-2xl font-bold pb-3">Vade</h1>
-                <Link href="/form">
+                <Link href="/dashboard">
                   <button className="bg-white px-2 py-2 rounded-full">
                     Review now
                   </button>
