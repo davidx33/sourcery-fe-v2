@@ -22,7 +22,7 @@ const ProfileHeader: NextPage = () => {
     content = (
       <div className="flex flex-col md:flex-row">
         <Image className='w-20 h-20 ring-2 ring-gray-300 rounded-full' src={session.user?.image as string} alt="Profile picture" height={200} width={200} />
-        <div className="flex flex-col pl-10">
+        <div className="flex flex-col pl-0 med:pl-10">
           <h1 className="text-white font-bold text-3xl pb-2">{session.user?.name}</h1>
           <h2 className="text-gray-300 text-xl pb-2">{session.user?.email}</h2>
         </div>
@@ -33,7 +33,7 @@ const ProfileHeader: NextPage = () => {
   return (
     <div className="px-10 py-5 bg-neutral-900 rounded-xl mb-5">
       <h1 className="text-white text-2xl font-semibold">My Profile</h1>
-      <div className="flex justify-center">
+      <div className="flex justify-center pt-3 med:pt-0">
         {content}
       </div>
     </div>

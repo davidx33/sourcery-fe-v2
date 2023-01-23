@@ -15,7 +15,7 @@ const RecommendedToReview: NextPage = () => {
             Recommended companies to review:
           </div>
           <div className="flex md:flex-row flex-col  justify-evenly">
-            <div className="flex flex-row">
+            <div className="flex flex-row pb-5 md:pb-0">
               <Image
                 src={snippyly}
                 alt=""
@@ -35,7 +35,7 @@ const RecommendedToReview: NextPage = () => {
                 </Link>
               </div>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row pb-5 md:pb-0">
               <Image
                 src={bookinglayer}
                 alt=""
@@ -57,7 +57,7 @@ const RecommendedToReview: NextPage = () => {
                 </Link>
               </div>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row pb-5 md:pb-0">
               <Image
                 src={vade}
                 alt=""
