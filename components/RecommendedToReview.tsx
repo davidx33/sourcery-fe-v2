@@ -21,7 +21,10 @@ const RecommendedToReview: NextPage = () => {
                 alt=""
                 width={90}
                 height={90}
-                className="rounded-full"
+                className="rounded-full cursor-pointer"
+                onClick={() => {
+                  window.open("https://snippyly.com/")
+                }}
               />
               <div className="flex flex-col pl-5 items-center">
                 <h1 className="text-white text-2xl font-bold pb-3">Snippyly</h1>
@@ -38,7 +41,10 @@ const RecommendedToReview: NextPage = () => {
                 alt=""
                 width={90}
                 height={90}
-                className="rounded-full"
+                className="rounded-full cursor-pointer"
+                onClick={() => {
+                  window.open("https://www.bookinglayer.com/")
+                }}
               />
               <div className="flex flex-col pl-5 items-center">
                 <h1 className="text-white text-2xl font-bold pb-3">
@@ -57,7 +63,10 @@ const RecommendedToReview: NextPage = () => {
                 alt=""
                 width={90}
                 height={90}
-                className="rounded-full"
+                className="rounded-full cursor-pointer"
+                onClick={() => {
+                  window.open("https://www.vade.ai/")
+                }}
               />
               <div className="flex flex-col pl-5 items-center">
                 <h1 className="text-white text-2xl font-bold pb-3">Vade</h1>
