@@ -3,23 +3,16 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import ProfileHeader from "../components/ProfileHeader";
 import MyCompanies from "../components/MyCompanies";
-import peterthiel from "../pages/images/peter_thiel.jpg";
-import linkedin from "../pages/images/linkedin.png";
-import twitter from "../pages/images/twitter.png";
-import circlescale from "../pages/images/circlescaleAI.png";
 import robinhood from "../pages/images/robinhoodlogo.png";
 import roblox from "../pages/images/roblox.jpg";
 import anduril from "../pages/images/anduril.jpg";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Layout from "../components/Layout";
+
 
 const Profile: NextPage = () => {
   return (
-    <div className="bg-black px-16">
-      <div className="pb-10">
-        <Navbar />
-      </div>
-      <div className="pb-5">
+    <Layout>
+      <div className="py-5">
         <ProfileHeader />
       </div>
       <div className="pb-5">
@@ -81,8 +74,7 @@ const Profile: NextPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 
