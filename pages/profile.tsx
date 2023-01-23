@@ -1,13 +1,12 @@
-import React from "react";
-import Head from "next/head";
-import { getSession } from "next-auth/react";
 import { GetServerSideProps } from "next";
 import type { NextPage } from "next";
+import Head from "next/head";
 import prisma from "../lib/prisma";
+import { Submission } from "@prisma/client";
+import { getSession } from "next-auth/react";
 import ProfileHeader from "../components/ProfileHeader";
 import MyCompanies from "../components/MyCompanies";
 import Layout from "../components/Layout";
-import { Submission } from "@prisma/client";
 import RecommendedToReview from "../components/RecommendedToReview";
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
