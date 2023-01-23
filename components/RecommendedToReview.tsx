@@ -14,7 +14,7 @@ const RecommendedToReview: NextPage = () => {
           <div className="text-white text-2xl font-extrabold pb-10">
             Recommended companies to review:
           </div>
-          <div className="flex flex-row justify-evenly">
+          <div className="flex md:flex-row flex-col  justify-evenly">
             <div className="flex flex-row">
               <Image
                 src={snippyly}

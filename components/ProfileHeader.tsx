@@ -20,7 +20,7 @@ const ProfileHeader: NextPage = () => {
 
   if (session) {
     content = (
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         <Image className='w-20 h-20 ring-2 ring-gray-300 rounded-full' src={session.user?.image as string} alt="Profile picture" height={200} width={200} />
         <div className="flex flex-col pl-10">
           <h1 className="text-white font-bold text-3xl pb-2">{session.user?.name}</h1>

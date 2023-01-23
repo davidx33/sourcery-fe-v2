@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
 import SignUpButton from "./SignUpButton";
@@ -17,12 +17,11 @@ import openai from "../pages/images/openai.jpg";
 import ramp from "../pages/images/ramp.jpg";
 
 const Hero: NextPage = () => {
-
   return (
-    <div className="flex flex-row text-left py-8 justify-between px-20 items-center">
-      <div className="flex flex-col w-2/4">
-        <div className="text-8xl">
-          <h2 className="text-left text-8xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-500 bg-clip-text text-transparent">
+    <div className= "flex md:flex-row flex-col text-left py-8 justify-between px-20 items-center" >
+      <div className="flex flex-col med:w-2/4 max-w-full">
+        <div>
+          <h2 className="text-left text-5xl md:text-8xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-500 bg-clip-text text-transparent">
             Find Companies. Get Paid.
           </h2>
         </div>
@@ -36,7 +35,7 @@ const Hero: NextPage = () => {
           </h1>
         </div>
       </div>
-      <div className="flex flex-row">
+      <div className="flex flex-row pt-10">
         <div>
           <Image
             src={titan}
@@ -147,4 +146,3 @@ export default Hero;
 function componentDidMount() {
   throw new Error("Function not implemented.");
 }
-

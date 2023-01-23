@@ -22,7 +22,7 @@ const Navbar: NextPage = () => {
         <SignUpButton />
         <button
           onClick={() => signIn('Google', { callbackUrl: '/profile' })}
-          className="text-white px-5 py-2 font-semibold"
+          className="text-white md:px-5 pl-2 py-2 font-semibold"
         >
           Log in
         </button>
@@ -38,7 +38,7 @@ const Navbar: NextPage = () => {
             {session.user?.name}
           </Link>
         </h3>
-        <button className="px-5 py-3 rounded-md" onClick={() => signOut()}>
+        <button className="md:px-5 pl-2 py-3 rounded-md" onClick={() => signOut()}>
           <a className="text-white font-semibold" href="#">
             Sign Out
           </a>

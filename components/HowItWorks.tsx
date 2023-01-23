@@ -14,35 +14,34 @@ const HowItWorks: NextPage = () => {
           <h1 className="text-5xl text-center">
             Source companies for VCs. Make money.
           </h1>
-          <div className="flex flex-row justify-evenly pt-10">
-            <div className="flex flex-col items-center text-white bg-neutral-800 rounded-lg w-1/4">
+          <div className="flex flex-col md:flex-row justify-evenly pt-10">
+            <div className="flex flex-col items-center text-white bg-neutral-800 rounded-lg md:w-1/4">
               <div className="px-10 py-10">
                 <Image src={ramp} alt="" width={150} height={150} />
               </div>
               <div className="pb-10">
-                <h2 className="text-3xl text-extrabold text-left px-10">
+                <h2 className="text-3xl text-extrabold text-center md:text-left px-10">
                   Find interesting companies
                 </h2>
                 
               </div>
             </div>
-            <div className="flex flex-col items-center text-white bg-neutral-800 rounded-lg w-1/4">
+            <div className="flex flex-col items-center text-white bg-neutral-800 rounded-lg md:w-1/4">
               <div className="px-10 py-10">
                 <Image src={earlybezos} alt="" width={390} height={390} />
               </div>
               <div className="flex flex-col pb-10">
-                <h2 className="text-3xl text-extrabold text-left px-10">
+                <h2 className="text-3xl text-extrabold text-center md:text-left px-10">
                   Provide your quick thoughts
                 </h2>
-                
               </div>
             </div>
-            <div className="flex flex-col items-center text-white bg-neutral-800 rounded-lg w-1/4">
+            <div className="flex flex-col items-center text-white bg-neutral-800 rounded-lg md:w-1/4">
               <div className="px-10 py-10">
                 <Image src={ipo} alt="" width={390} height={390} />
               </div>
               <div className="pb-10">
-                <h2 className="text-3xl text-extrabold text-left px-10">
+                <h2 className="text-3xl text-extrabold text-center md:text-left px-10">
                   Receive payouts from VCs
                 </h2>
                 
