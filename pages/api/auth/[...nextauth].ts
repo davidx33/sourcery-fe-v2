@@ -4,10 +4,7 @@ import GoogleProvider from 'next-auth/providers/google';
 import prisma from '../../../lib/prisma';
 import '../../../types/environment.d.ts';
 
-const authHandler = (req, res) => NextAuth(req, res, options);
-export default authHandler;
-
-const options = {
+export default NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
@@ -15,28 +12,14 @@ const options = {
     }),
   ],
   adapter: PrismaAdapter(prisma),
-  secret: process.env.SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
+  session: {
+    strategy: "jwt",
+  },
   callbacks: {
-    async jwt({ token, user, account, profile, isNewUser }) {
-      user && (token.user = user)
-      return token
-    },
-    async session({ session, token, user }) {
-      session = {
-        ...session,
-        user: {
-          id: user.id,
-          ...session.user
-        }
-      }
-      return session
-    },
-    async redirect({ url, baseUrl }) {
-      // Allows relative callback URLs
-      if (url.startsWith("/")) return `${baseUrl}${url}`
-      // Allows callback URLs on the same origin
-      else if (new URL(url).origin === baseUrl) return url
-      return baseUrl
-    }
-  }
-};
+    async signIn({ user, account, profile, email, credentials }) { return true },
+    async redirect({ url, baseUrl }) { return baseUrl },
+    async session({ session, token, user }) { return session },
+    async jwt({ token, user, account, profile, isNewUser }) { return token }
+  },
+});
