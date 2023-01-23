@@ -7,11 +7,19 @@ import robinhood from "../pages/images/robinhoodlogo.png";
 import roblox from "../pages/images/roblox.jpg";
 import anduril from "../pages/images/anduril.jpg";
 import Layout from "../components/Layout";
+import Head from "next/head";
 
 
 const Profile: NextPage = () => {
   return (
     <Layout>
+      <Head>
+        <title>Sourcery</title>
+        <meta
+          name="description"
+          content="Find companies. Make money."
+        />
+      </Head>
       <div className="py-5">
         <ProfileHeader />
       </div>

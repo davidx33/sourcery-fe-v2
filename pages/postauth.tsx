@@ -7,9 +7,7 @@ import Layout from "../components/Layout";
 const PostAuth: NextPage = () => {
   return (
     <Layout>
-      <div>
-        Hello. Welcome to the screen you see after you complete Google Auth
-      </div>
+      
     </Layout>
   );
 };
