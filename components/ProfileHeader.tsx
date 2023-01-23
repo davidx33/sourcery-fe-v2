@@ -1,46 +1,42 @@
 import React from "react";
 import type { NextPage } from "next";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
-import peterthiel from "../pages/images/peter_thiel.jpg";
 import linkedin from "../pages/images/linkedin.png";
 import twitter from "../pages/images/twitter.png";
 
 
 const ProfileHeader: NextPage = () => {
-  return (
-    <div className="px-10 py-10 bg-gradient-to-r from-fuchsia-500 to-blue-500 rounded-xl">
-    <div className="flex flex-row items-center justify-center">
-      <Image
-        src={peterthiel}
-        alt=""
-        className="rounded-xl"
-        width={200}
-        height={200}
-      />
-      <div className="flex flex-col pl-10">
-        <h1 className="text-white font-bold text-3xl pb-2">Peter Thiel</h1>
-        <h1 className="text-white text-extrabold text-xl">
-          thexudavid@gmail.com
-        </h1>
-        <div className="flex flex-row pt-3">
-          <Image
-            src={linkedin}
-            alt=""
-            width={50}
-            height={50}
-            className="pr-2"
-          />
-          <Image
-            src={twitter}
-            alt=""
-            width={50}
-            height={50}
-            className="pl-2"
-          />
+  const { data: session, status } = useSession();
+
+  let content;
+
+  if (!session) {
+    content = (
+      <>
+      </>
+    );
+  }
+
+  if (session) {
+    content = (
+      <div className="flex">
+        <Image className='w-20 h-20 ring-2 ring-gray-300 rounded-full' src={session.user?.image as string} alt="Profile picture" height={200} width={200} />
+        <div className="flex flex-col pl-10">
+          <h1 className="text-white font-bold text-3xl pb-2">{session.user?.name}</h1>
+          <h2 className="text-gray-300 text-xl pb-2">{session.user?.email}</h2>
         </div>
       </div>
+    );
+  }
+
+  return (
+    <div className="px-10 py-5 bg-neutral-900 rounded-xl mb-5">
+      <h1 className="text-white text-2xl font-semibold">My Profile</h1>
+      <div className="flex justify-center">
+        {content}
+      </div>
     </div>
-  </div>
   );
 };
 
