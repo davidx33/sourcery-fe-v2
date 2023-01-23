@@ -23,9 +23,7 @@ const HowItWorks: NextPage = () => {
                 <h2 className="text-3xl text-extrabold text-left px-10">
                   Find interesting companies
                 </h2>
-                <h2 className="pt-3 px-10">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </h2>
+                
               </div>
             </div>
             <div className="flex flex-col items-center text-white bg-neutral-800 rounded-lg w-1/4">
@@ -36,9 +34,7 @@ const HowItWorks: NextPage = () => {
                 <h2 className="text-3xl text-extrabold text-left px-10">
                   Provide your quick thoughts
                 </h2>
-                <h2 className="pt-3 px-10">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </h2>
+                
               </div>
             </div>
             <div className="flex flex-col items-center text-white bg-neutral-800 rounded-lg w-1/4">
@@ -49,9 +45,7 @@ const HowItWorks: NextPage = () => {
                 <h2 className="text-3xl text-extrabold text-left px-10">
                   Receive payouts from VCs
                 </h2>
-                <h2 className="pt-3 px-10">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </h2>
+                
               </div>
             </div>
           </div>

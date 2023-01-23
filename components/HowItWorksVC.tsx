@@ -17,8 +17,7 @@ const HowItWorksVC: NextPage = () => {
           <Image src={optin} alt="" width={80} height={80} />
           <h2 className="pt-5 text-5xl">Opt-in</h2>
           <h3 className="text-xl pt-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Allow Sourcery to send you dealflow every week, filtered by the data and metrics you care about
           </h3>
         </div>
         <div className="bg-gradient-to-r from-fuchsia-500 to-blue-500 rounded-xl">
@@ -37,8 +36,7 @@ const HowItWorksVC: NextPage = () => {
           <Image src={receive} alt="" width={80} height={80} />
           <h2 className="pt-5 text-5xl">Get access</h2>
           <h3 className="text-xl pt-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Receive companies sourced by industry experts, experienced venture scouts, and everyday people.
           </h3>
         </div>
       </div>
@@ -47,8 +45,7 @@ const HowItWorksVC: NextPage = () => {
           <Image src={evaluate} alt="" width={80} height={80} />
           <h2 className="pt-5 text-5xl">Evaluate</h2>
           <h3 className="text-xl pt-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Judge the dealflow you receive every week so it keeps getting better
           </h3>
         </div>
         <div className="bg-gradient-to-r from-fuchsia-500 to-blue-500 rounded-xl">

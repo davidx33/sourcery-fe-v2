@@ -15,8 +15,7 @@ const WhySourcery: NextPage = () => {
         <div className="flex flex-col text-white pr-5 w-1/3">
           <h2 className="pt-5 text-5xl">Monetize your domain expertise</h2>
           <h3 className="text-xl pt-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Get paid for finding companies in industries you have extensive knowledge about.
           </h3>
         </div>
         <div className="bg-gradient-to-r from-fuchsia-500 to-blue-500 rounded-xl">
@@ -34,8 +33,7 @@ const WhySourcery: NextPage = () => {
         <div className="flex flex-col text-white pr-5 w-1/3">
           <h2 className="pt-5 text-5xl">Source the next big thing</h2>
           <h3 className="text-xl pt-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Be the first to discover a product that will change the world.
           </h3>
         </div>
       </div>
