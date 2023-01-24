@@ -14,7 +14,7 @@ const HowItWorksVC: NextPage = () => {
       <h1 className="text-center font-bold pb-10 text-8xl">How it works</h1>
       <div className="flex md:flex-row flex-col text-white text-left text-5xl pt-16 px-10 justify-evenly items-center">
         <div className="flex flex-col text-white pr-5 md:w-1/3 pb-5 md:pb-0">
-          <Image src={optin} alt="" width={80} height={80} />
+          
           <h2 className="pt-5 text-5xl">Opt-in</h2>
           <h3 className="text-xl pt-5">
             Allow Sourcery to send you dealflow every week, filtered by the data and metrics you care about
@@ -33,7 +33,7 @@ const HowItWorksVC: NextPage = () => {
           </div>
         </div>
         <div className="flex flex-col text-white pr-5 md:w-1/3">
-          <Image src={receive} alt="" width={80} height={80} />
+          
           <h2 className="pt-5 text-5xl">Get access</h2>
           <h3 className="text-xl pt-5">
             Receive companies sourced by industry experts, experienced venture scouts, and everyday people.
@@ -42,7 +42,7 @@ const HowItWorksVC: NextPage = () => {
       </div>
       <div className="flex md:flex-row flex-col text-white text-left text-5xl pt-8 px-10 justify-evenly items-center">
         <div className="flex flex-col text-white pr-5 md:w-1/3">
-          <Image src={evaluate} alt="" width={80} height={80} />
+      
           <h2 className="pt-5 text-5xl">Evaluate</h2>
           <h3 className="text-xl pt-5">
             Judge the dealflow you receive every week so it keeps getting better

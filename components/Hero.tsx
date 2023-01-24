@@ -19,20 +19,17 @@ import ramp from "../pages/images/ramp.jpg";
 const Hero: NextPage = () => {
   return (
     <div className= "flex md:flex-row flex-col text-left py-8 justify-between px-20 items-center" >
-      <div className="flex flex-col med:w-2/4 max-w-full">
+      <div className="flex flex-col med:w-2/4">
         <div>
           <h2 className="text-left text-5xl md:text-8xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-500 bg-clip-text text-transparent">
             Find Companies. Get Paid.
           </h2>
         </div>
-        <div className="text-white text-left text-2xl pt-8">
-          Source companies for VCs. Get paid $1,000 if it becomes an investment.
+        <div className="text-white text-left text-xl pt-8">
+        Sign up, take notes on startups you like, and receive $1,000 cash if one of our venture partners invests.
         </div>
         <div className="pt-5 flex flex-row items-center">
           <SignUpButton />
-          <h1 className="text-white pl-5">
-            <a href="mailto:thexudavid@gmail.com">Contact sales ➞</a>
-          </h1>
         </div>
       </div>
       <div className="flex flex-row pt-10">

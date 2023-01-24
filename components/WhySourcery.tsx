@@ -2,8 +2,7 @@ import React from "react";
 import Image from "next/image";
 import type { NextPage } from "next";
 import cannabis from "../pages/images/cannabis.jpg";
-import jobsandwoz from "../pages/images/jobsandwoz.jpg"
-
+import jobsandwoz from "../pages/images/jobsandwoz.jpg";
 
 const WhySourcery: NextPage = () => {
   return (
@@ -13,9 +12,13 @@ const WhySourcery: NextPage = () => {
       </h2>
       <div className="flex flex-col md:flex-row text-white md:text-left text-5xl pt-16 md:px-10 justify-evenly items-center">
         <div className="flex flex-col text-white pr-5 md:w-1/3">
-          <h2 className="pt-5 text-5xl">Monetize your domain expertise</h2>
+          <h2 className="pt-5 text-5xl font-bold">
+            Monetize your domain expertise
+          </h2>
           <h3 className="text-xl pt-5">
-            Get paid for finding companies in industries you have extensive knowledge about.
+            Chances are you spend lots of time reading about new companies,
+            ideas, and founders in the industry you care about. Keep track of
+            that info on our platform, and get paid for it.
           </h3>
         </div>
         <div className="bg-gradient-to-r from-fuchsia-500 to-blue-500 rounded-xl">
@@ -31,9 +34,12 @@ const WhySourcery: NextPage = () => {
           </div>
         </div>
         <div className="flex flex-col text-white pr-5 md:w-1/3">
-          <h2 className="pt-5 text-5xl">Source the next big thing</h2>
+          <h2 className="pt-5 text-5xl font-bold">Source the next big thing</h2>
           <h3 className="text-xl pt-5">
-            Be the first to discover a product that will change the world.
+            Looking for jobs in entrepreneurship or venture capital? Need a
+            better way to track up and coming players in your industry? Top
+            sorcerers 🧙 will be connected to our venture partners for interview
+            and networking opportunities.
           </h3>
         </div>
       </div>
