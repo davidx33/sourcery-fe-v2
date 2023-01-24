@@ -8,7 +8,7 @@ const Interested: NextPage = () => {
     <div className="pt-52 pb-16">
       <Divider />
       <div className="flex flex-col justify-center py-36">
-        <h1 className="flex justify-center text-white text-3xl font-bold bg-gradient-to-r from-fuchsia-500 to-blue-500 bg-clip-text text-transparent">
+        <h1 className="flex px-10 text-center md:px-0 justify-center text-white text-3xl font-bold bg-gradient-to-r from-fuchsia-500 to-blue-500 bg-clip-text text-transparent">
           Want to learn more about Sourcery?
         </h1>
         <div className="flex flex-row justify-center pt-5">

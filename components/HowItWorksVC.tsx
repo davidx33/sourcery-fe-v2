@@ -1,9 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import type { NextPage } from "next";
-import optin from "../pages/images/optin.png";
-import receive from "../pages/images/receive.png";
-import evaluate from "../pages/images/evaluate.png";
 import steve from "../pages/images/stevejobs.png";
 import greenlight from "../pages/images/optinimage.jpg";
 import peterandmusk from "../pages/images/elonandpeter.jpg";
@@ -44,7 +41,7 @@ const HowItWorksVC: NextPage = () => {
         <div className="flex flex-col text-white pr-5 md:w-1/3">
       
           <h2 className="pt-5 text-5xl">Evaluate</h2>
-          <h3 className="text-xl pt-5">
+          <h3 className="text-xl pt-5 pb-5 md:pb-0">
             Judge the dealflow you receive every week so it keeps getting better
           </h3>
         </div>

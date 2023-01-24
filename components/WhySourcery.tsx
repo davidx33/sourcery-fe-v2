@@ -7,7 +7,7 @@ import jobsandwoz from "../pages/images/jobsandwoz.jpg";
 const WhySourcery: NextPage = () => {
   return (
     <div className="flex flex-col px-10 py-10">
-      <h2 className="flex justify-center text-8xl text-white text-center ">
+      <h2 className="flex justify-center text-6xl md:text-8xl text-white text-center ">
         Why Sourcery?
       </h2>
       <div className="flex flex-col md:flex-row text-white md:text-left text-5xl pt-16 md:px-10 justify-evenly items-center">
