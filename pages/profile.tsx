@@ -22,7 +22,10 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
 
   const submissions = await prisma.submission.findMany({
     where: {
-      userId: session.user?.id
+      user: session.user
+    },
+    include: {
+      company: true,
     }
   });
   res.statusCode = 200;
