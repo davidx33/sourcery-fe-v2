@@ -20,8 +20,8 @@ const VCorNot: NextPage = () => {
             }}
             className={
               !isVC
-                ? "text-black hover:border border-black  px-8 rounded-full text-7xl"
-                : "text-black hover:border border-black px-8 rounded-full text-7xl"
+                ? "text-black hover:underline border-black  px-8 rounded-full text-7xl"
+                : "text-black hover:underline border-black px-8 rounded-full text-7xl"
             }
           >
             <h2 className="italic text-6xl">I'm not a VC</h2>
@@ -34,8 +34,8 @@ const VCorNot: NextPage = () => {
             }}
             className={
               isVC
-                ? "text-black hover:border border-black  px-8 rounded-full  text-7xl "
-                : "text-black hover:border border-black px-8 rounded-full text-7xl "
+                ? "text-black hover:underline border-black  px-8 rounded-full  text-7xl "
+                : "text-black hover:underline border-black px-8 rounded-full text-7xl "
             }
           >
             <h2 className="italic text-6xl">I'm a VC</h2>
