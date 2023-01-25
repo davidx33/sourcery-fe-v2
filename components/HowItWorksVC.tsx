@@ -8,21 +8,19 @@ const HowItWorksVC: NextPage = () => {
     <div className="flex flex-col py-20 px-20">
       <div className="flex flex-row items-center">
         <div className="w-2/4">
-        <h1 className=" text-black text-4xl uppercase underline">
-        Slow dealflow that monopolizes VC time and resources
-        </h1>
+          <h1 className=" text-black text-4xl">
+            Slow dealflow that monopolizes VC time and resources
+          </h1>
         </div>
-        
+
         <div className="flex flex-col w-2/4 pl-36">
           <h1 className="text-black font-semibold text-3xl">The Problem</h1>
           <div className="pt-3">
             <h3 className="text-black">
-              Research on modern education and classroom environments notes a
-              deficit in student exposure to and exploration of different
-              cultures, perspectives, and circumstances. When we cultivate this
-              exposure, students gain the knowledge and skills necessary to
-              function in an increasingly diverse and complex society. It
-              fosters empathy and creativity, and combats prejudice.
+              VC analysts spend too much time sorting through company lists.
+              Employees, students, and startup enthusiasts in every industry
+              take notes on companies they like. We can improve sourcing
+              infrastructure by leveraging the wisdom of these crowds
             </h3>
           </div>
         </div>
@@ -32,20 +30,18 @@ const HowItWorksVC: NextPage = () => {
       </div>
       <div className="flex flex-row items-center">
         <div className="flex flex-col pr-16 w-2/4">
-          <h1 className="text-black font-semibold text-3xl">The Problem</h1>
+          <h1 className="text-black font-semibold text-3xl">The Solution</h1>
           <div className="pt-3">
             <h3 className="text-black">
-              Research on modern education and classroom environments notes a
-              deficit in student exposure to and exploration of different
-              cultures, perspectives, and circumstances. When we cultivate this
-              exposure, students gain the knowledge and skills necessary to
-              function in an increasingly diverse and complex society. It
-              fosters empathy and creativity, and combats prejudice.
+              Contact us to learn how you can access Sourcery’s dealflow for
+              free. We filter data based on your investment constraints so you
+              can quickly incorporate our list of startups, sourced by a diverse
+              group of industry veterans
             </h3>
           </div>
         </div>
-        <h1 className=" text-black text-4xl underline uppercase text-right">
-        Access our deal flow for free
+        <h1 className=" text-black text-4xl text-right">
+          Access our deal flow for free
         </h1>
       </div>
     </div>
