@@ -13,32 +13,32 @@ const VCorNot: NextPage = () => {
   return (
     <div className="text-white px-10 ">
       <div className="flex flex-row justify-center py-10">
-        <div className="pr-3">
+        <div className="pr-1">
           <button
             onClick={() => {
               setIsVC(false);
             }}
             className={
               !isVC
-                ? "text-black border border-black  px-8 rounded-full text-7xl"
-                : "text-black px-8 rounded-full text-7xl"
+                ? "text-black hover:border border-black  px-8 rounded-full text-7xl"
+                : "text-black hover:border border-black px-8 rounded-full text-7xl"
             }
           >
-            <h2 className="italic">I'm not a VC</h2>
+            <h2 className="italic text-6xl">I'm not a VC</h2>
           </button>
         </div>
-        <div className="pl-3">
+        <div className="pl-1">
           <button
             onClick={() => {
               setIsVC(true);
             }}
             className={
               isVC
-                ? "text-black border border-black  px-8 rounded-full  text-7xl "
-                : "text-black px-8 rounded-full text-7xl "
+                ? "text-black hover:border border-black  px-8 rounded-full  text-7xl "
+                : "text-black hover:border border-black px-8 rounded-full text-7xl "
             }
           >
-            <h2 className="italic">I'm a VC</h2>
+            <h2 className="italic text-6xl">I'm a VC</h2>
           </button>
         </div>
       </div>

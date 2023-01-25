@@ -6,12 +6,14 @@ import curvedarrow from "../pages/images/curvedarrow.png";
 const HowItWorksVC: NextPage = () => {
   return (
     <div className="flex flex-col py-20 px-20">
-      <div className="flex flex-row">
-        <h1 className=" text-black text-4xl">
-          We believe traditional education doesn’t give students the opportunity
-          to fully explore the value in different perspectives and beliefs.
+      <div className="flex flex-row items-center">
+        <div className="w-2/4">
+        <h1 className=" text-black text-4xl uppercase underline">
+        Slow dealflow that monopolizes VC time and resources
         </h1>
-        <div className="flex flex-col">
+        </div>
+        
+        <div className="flex flex-col w-2/4 pl-36">
           <h1 className="text-black font-semibold text-3xl">The Problem</h1>
           <div className="pt-3">
             <h3 className="text-black">
@@ -28,8 +30,8 @@ const HowItWorksVC: NextPage = () => {
       <div className="flex justify-center pb-10">
         <Image src={curvedarrow} alt="" width={200} height={200} />
       </div>
-      <div className="flex flex-row">
-        <div className="flex flex-col pr-16">
+      <div className="flex flex-row items-center">
+        <div className="flex flex-col pr-16 w-2/4">
           <h1 className="text-black font-semibold text-3xl">The Problem</h1>
           <div className="pt-3">
             <h3 className="text-black">
@@ -42,9 +44,8 @@ const HowItWorksVC: NextPage = () => {
             </h3>
           </div>
         </div>
-        <h1 className=" text-black text-4xl">
-          We believe traditional education doesn’t give students the opportunity
-          to fully explore the value in different perspectives and beliefs.
+        <h1 className=" text-black text-4xl underline uppercase text-right">
+        Access our deal flow for free
         </h1>
       </div>
     </div>
