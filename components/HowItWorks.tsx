@@ -55,7 +55,7 @@ const HowItWorks: NextPage = () => {
                   Get cash
                 </h2>
                 <h2 className="text-lg text-center">
-                  Get $15 for every 5 companies sourced; $1,000 for every
+                  Get $5 for every 5 companies sourced; $1,000 for every
                   company invested in by our venture partners
                 </h2>
               </div>
