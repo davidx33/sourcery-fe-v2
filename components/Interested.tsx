@@ -5,8 +5,7 @@ import Link from "next/link";
 
 const Interested: NextPage = () => {
   return (
-    <div className="py-5">
-      <Divider />
+    <div className="py-10 bg-slate-100">
       <div className="flex flex-col justify-center py-10">
         <h1 className="flex px-10 text-center md:px-0 justify-center text-black text-3xl ">
           Want to learn more about Sourcery?
@@ -28,7 +27,6 @@ const Interested: NextPage = () => {
           </div>
         </div>
       </div>
-      <Divider />
     </div>
   );
 };

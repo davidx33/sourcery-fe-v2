@@ -31,7 +31,7 @@ const WhySourcery: NextPage = () => {
         </div>
         <div className="rounded-xl">
         <div className="px-16 py-16">
-            <Image src={monetize} alt="" width={300} height={300} />
+            <Image src={monetize} alt="" width={300} height={300} className="-rotate-12"/>
           </div>
          
         </div>

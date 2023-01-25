@@ -50,7 +50,7 @@ const Navbar: NextPage = () => {
   }
 
   return (
-    <div className="flex flex-row items-center pb-5 pt-10 justify-between px-10 md:px-20">
+    <div className="flex flex-row items-center pb-5 pt-5 justify-between px-10 md:px-20">
       <div className="flex flex-row">
         <Link href="/">
           <h1 className=" text-2xl font-bold">Sourcery</h1>
