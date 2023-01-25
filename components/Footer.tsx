@@ -7,13 +7,13 @@ const Hero: NextPage = () => {
     <div>
       <div className="flex flex-row py-10 cursor-pointer">
         <Link href="/dashboard">
-          <div className="text-white pl-9 cursor-pointer">Product</div>
+          <div className="text-black pl-9 cursor-pointer">Product</div>
         </Link>
-        <div className="text-white pl-9 cursor-pointer">
+        <div className="pl-9 cursor-pointer text-black">
           <a href="mailto:thexudavid@gmail.com">Contact</a>
         </div>
       </div>
-      <div className="text-white pl-9 pb-5">Sourcery © 2022</div>
+      <div className="text-black pl-9 pb-5">Sourcery © 2022</div>
     </div>
   );
 };

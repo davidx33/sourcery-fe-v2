@@ -27,7 +27,7 @@ const RecommendedToReview: NextPage = () => {
                 }}
               />
               <div className="flex flex-col pl-5 items-center">
-                <h1 className="text-white text-2xl font-bold pb-3">Snippyly</h1>
+                <h1 className="text-white font-bold pb-3 text-lg md:text-2xl">Snippyly</h1>
                 <Link href="/dashboard">
                   <button className="bg-white px-2 py-2 rounded-full">
                     Review now
@@ -47,7 +47,7 @@ const RecommendedToReview: NextPage = () => {
                 }}
               />
               <div className="flex flex-col pl-5 items-center">
-                <h1 className="text-white text-2xl font-bold pb-3">
+                <h1 className="text-white text-lg md:text-2xl font-bold pb-3">
                   Booking Layer
                 </h1>
                 <Link href="/dashboard">
@@ -69,9 +69,9 @@ const RecommendedToReview: NextPage = () => {
                 }}
               />
               <div className="flex flex-col pl-5 items-center">
-                <h1 className="text-white text-2xl font-bold pb-3">Vade</h1>
+                <h1 className="text-white text-lg md:text-2xl font-bold pb-3">Vade</h1>
                 <Link href="/dashboard">
-                  <button className="bg-white px-2 py-2 rounded-full">
+                  <button className="bg-white px-2 py-2  rounded-full">
                     Review now
                   </button>
                 </Link>

@@ -8,7 +8,7 @@ import Head from "next/head";
 
 const Home: NextPage = () => {
   return (
-    <div className="bg-black">
+    <div >
       <Head>
         <title>Sourcery</title>
         <meta

@@ -20,9 +20,10 @@ const Navbar: NextPage = () => {
     content = (
       <>
         <SignUpButton />
+
         <button
-          onClick={() => signIn('Google', { callbackUrl: '/profile' })}
-          className="text-white md:px-5 pl-2 py-2 font-semibold"
+          onClick={() => signIn("Google", { callbackUrl: "/profile" })}
+          className="md:px-5 pl-2 py-2 font-semibold"
         >
           Log in
         </button>
@@ -33,13 +34,14 @@ const Navbar: NextPage = () => {
   if (session) {
     content = (
       <>
-        <h3 className="text-white font-semibold underline">
-          <Link href="/profile">
-            {session.user?.name}
-          </Link>
+        <h3 className="font-semibold underline">
+          <Link href="/profile">{session.user?.name}</Link>
         </h3>
-        <button className="md:px-5 pl-2 py-3 rounded-md" onClick={() => signOut()}>
-          <a className="text-white font-semibold" href="#">
+        <button
+          className="md:px-5 pl-2 py-3 rounded-md"
+          onClick={() => signOut()}
+        >
+          <a className=" font-semibold" href="#">
             Sign Out
           </a>
         </button>
@@ -48,10 +50,10 @@ const Navbar: NextPage = () => {
   }
 
   return (
-    <div className="bg-black flex flex-row items-center pb-5 pt-10 justify-between px-10 md:px-20">
+    <div className="flex flex-row items-center pb-5 pt-10 justify-between px-10 md:px-20">
       <div className="flex flex-row">
         <Link href="/">
-          <h1 className="text-white text-2xl font-bold">Sourcery</h1>
+          <h1 className=" text-2xl font-bold">Sourcery</h1>
         </Link>
       </div>
       <div className="flex flex-row items-center justify-end pr-5">

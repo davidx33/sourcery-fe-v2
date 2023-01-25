@@ -11,28 +11,36 @@ import WhySourcery from "./WhySourcery";
 const VCorNot: NextPage = () => {
   const [isVC, setIsVC] = useState(false);
   return (
-    <div className="text-white px-10 pt-8">
+    <div className="text-white px-10 ">
       <div className="flex flex-row justify-center py-10">
-        <button
-          onClick={() => { setIsVC(false) }}
-          className={
-            !isVC
-              ? "text-white px-8 rounded-full font-semibold text-7xl"
-              : "text-gray-700 px-8 rounded-full font-semibold text-7xl"
-          }
-        >
-          I'm not a VC
-        </button>
-        <button
-          onClick={() => { setIsVC(true) }}
-          className={
-            isVC
-              ? "text-white-400 px-8 rounded-full font-semibold text-7xl"
-              : "text-gray-700 px-8 rounded-full font-semibold text-7xl"
-          }
-        >
-          I am a VC
-        </button>
+        <div className="pr-3">
+          <button
+            onClick={() => {
+              setIsVC(false);
+            }}
+            className={
+              !isVC
+                ? "text-black border border-black  px-8 rounded-full text-7xl"
+                : "text-black px-8 rounded-full text-7xl"
+            }
+          >
+            <h2 className="italic">I'm not a VC</h2>
+          </button>
+        </div>
+        <div className="pl-3">
+          <button
+            onClick={() => {
+              setIsVC(true);
+            }}
+            className={
+              isVC
+                ? "text-black border border-black  px-8 rounded-full  text-7xl "
+                : "text-black px-8 rounded-full text-7xl "
+            }
+          >
+            <h2 className="italic">I'm a VC</h2>
+          </button>
+        </div>
       </div>
       {!isVC ? (
         <div className="flex flex-col">
@@ -42,7 +50,6 @@ const VCorNot: NextPage = () => {
       ) : (
         <div className="flex flex-col">
           <HowItWorksVC />
-          <WhySourceryVC />
         </div>
       )}
     </div>
