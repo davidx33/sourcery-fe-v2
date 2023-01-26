@@ -12,7 +12,7 @@ import Link from "next/link";
 const HowItWorks: NextPage = () => {
   return (
     <div className="flex flex-col py-20">
-      <h1 className="text-center  pb-10 text-5xl font-semibold text-black">How it works</h1>
+      <h1 className="text-center  pb-10 text-8xl text-black">How it works</h1>
       <div className="rounded-xl">
         <div className="flex flex-col px-5 py-6">
           <div className="flex flex-col md:flex-row justify-center items-center">
