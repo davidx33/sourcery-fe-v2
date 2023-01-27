@@ -8,7 +8,7 @@ import Head from "next/head";
 
 const Home: NextPage = () => {
   return (
-    <div >
+    <div className="scroll-smooth">
       <Head>
         <title>Sourcery</title>
         <meta

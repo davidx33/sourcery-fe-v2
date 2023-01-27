@@ -1,57 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
+import ImAVC from "./ImAVC";
+import ImNotAVC from "./ImNotAVC";
 import type { NextPage } from "next";
-import WhySourceryVC from "./WhySourceryVC";
-import HowItWorksVC from "./HowItWorksVC";
-import HowItWorks from "./HowItWorks";
-import WhySourcery from "./WhySourcery";
-
-// implementation:
-// have each button click change state. based on what state is toggled to, display some various imported components
 
 const VCorNot: NextPage = () => {
-  const [isVC, setIsVC] = useState(false);
   return (
-    <div className="text-white px-10 ">
-      <div className="flex flex-row justify-center py-10">
-        <div className="pr-2">
-          <button
-            onClick={() => {
-              setIsVC(false);
-            }}
-            className={
-              !isVC
-                ? "text-black hover:bg-white px-8 hover:border hover:border-black rounded-full bg-slate-100 text-7xl"
-                : "text-black hover:bg-white hover:border hover:border-black px-8 bg-slate-100 rounded-full text-7xl"
-            }
-          >
-            <h2 className="text-6xl ">I'm not a VC</h2>
-          </button>
+    <div className="flex flex-col bg-white px-20 py-10 scroll-smooth">
+      <div className="flex flex-row">
+        <div className="pr-3">
+          <a href="#imnotVC">
+            <button className="text-black border-2 px-1  border-solid md:px-5 md:py-2 rounded-full hover:bg-white hover:border-black ">
+              I'm not a VC
+            </button>
+          </a>
         </div>
-        <div className="pl-2">
-          <button
-            onClick={() => {
-              setIsVC(true);
-            }}
-            className={
-              isVC
-                ? "text-black hover:bg-white hover:border hover:border-black border-black bg-slate-100 px-8 rounded-full  text-7xl "
-                : "text-black  hover:bg-white hover:border hover:border-black border-black bg-slate-100 px-8 rounded-full text-7xl "
-            }
-          >
-            <h2 className="text-6xl">I'm a VC</h2>
-          </button>
+        <div className="pl-3">
+          <a href="#imVC">
+            <button className="text-black border-2 px-1 border-solid md:px-5 md:py-2 rounded-full hover:bg-white hover:border-black ">
+              I'm a VC
+            </button>
+          </a>
         </div>
       </div>
-      {!isVC ? (
-        <div className="flex flex-col">
-          <HowItWorks />
-          <WhySourcery />
-        </div>
-      ) : (
-        <div className="flex flex-col">
-          <HowItWorksVC />
-        </div>
-      )}
+      <div id="imnotVC">
+        <ImNotAVC />
+      </div>
+      <div id="imVC">
+        <ImAVC />
+      </div>
     </div>
   );
 };

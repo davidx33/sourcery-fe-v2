@@ -1,6 +1,5 @@
 import React from "react";
 import type { NextPage } from "next";
-import Divider from "./Divider";
 import Link from "next/link";
 
 const Interested: NextPage = () => {
@@ -12,15 +11,15 @@ const Interested: NextPage = () => {
         </h1>
         <div className="flex flex-row items-center justify-center pt-5">
           <div className="pr-3">
-            <button className="bg-white text-black rounded-full">
-              <h2 className="px-5 py-5">
+            <button className="text-black border-2  border-solid px-5 py-2 rounded-full hover:bg-white hover:border-black">
+              <h2>
                 <a href="mailto:thexudavid@gmail.com">Contact us</a>
               </h2>
             </button>
           </div>
           <div className="pl-3">
-            <button className="border-2 border-black text-black rounded-full">
-              <h2 className="px-5 py-3">
+            <button className="text-black border-2  border-solid px-5 py-2 rounded-full hover:bg-white hover:border-black">
+              <h2 className="">
                 <Link href="/profile">Get started</Link>
               </h2>
             </button>
