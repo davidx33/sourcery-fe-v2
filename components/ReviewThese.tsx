@@ -15,7 +15,7 @@ const ReviewThese: NextPage = () => {
 
   if (session) {
     content = (
-      <div className="flex flex-col px-3 bg-white rounded-lg w-full">
+      <div className="flex flex-col px-3 bg-slate-100 rounded-lg w-full">
         <div className="flex flex-row justify-between items-center py-3 px-3">
           <h2 className="text-2xl">Review these</h2>
           <div className="flex flex-row items-center pl-16">

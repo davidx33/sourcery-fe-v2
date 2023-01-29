@@ -81,6 +81,6 @@ model Submission {
   relevantExperience        String
 }
 
-model MessageBoard {
+model MessageBoard {/
   message                       String
 }

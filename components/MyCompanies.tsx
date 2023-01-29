@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Submission } from "@prisma/client";
 import bluechevronright from "../pages/images/bluechevronright.png";
+import Divider from "../components/Divider";
 
 type Props = {
   submissions: Submission[];
@@ -10,8 +11,8 @@ type Props = {
 
 const MyCompanies: FC<Props> = ({ submissions }) => {
   return (
-    <div className="px-10 py-5 bg-white rounded-xl mb-5 ">
-      <div className="flex flex-col md:flex-row md:justify-between mb-5 pb-3 med:pb-0">
+    <div className="px-10 py-5 bg-slate-100 rounded-xl mb-5 ">
+      <div className="flex flex-col md:flex-row md:justify-between mb-5 med:pb-0">
         <h1 className="text-black text-2xl font-semibold">My Companies</h1>
         <div className="flex flex-row items-center">
           <Link
@@ -20,15 +21,12 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
           >
             Source New Company
           </Link>
-          <div className="flex flex-row items-center pl-3">
-            <p className="text-sm text-sky-600">See more</p>
-            <Image src={bluechevronright} alt="" height={1} width={20}/>
-          </div>
         </div>
       </div>
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-700 uppercase bg-neutral-50 dark:bg-neutral-800 dark:text-gray-400">
+      <Divider />
+      <div className="relative overflow-x-auto shadow-md sm:rounded-lg pt-3">
+        <table className="w-full text-sm text-left">
+          <thead className="text-xs text-black uppercase bg-white">
             <tr>
               <th scope="col" className="px-6 py-3">
                 Company Name
@@ -65,7 +63,6 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
                   <td className="px-6 py-4">
                     {/* @ts-ignore */}
                     {submission.createdAt}
-                  
                   </td>
                   <td className="px-6 py-4">
                     <a

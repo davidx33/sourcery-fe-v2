@@ -6,6 +6,7 @@ import Interested from "../components/Interested";
 import Footer from "../components/Footer";
 import Head from "next/head";
 
+// David TODO: wrap everything component in layout.tsx
 const Home: NextPage = () => {
   return (
     <div className="scroll-smooth">

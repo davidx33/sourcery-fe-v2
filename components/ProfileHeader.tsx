@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import divider from "../pages/images/divider.png";
 import notification from "../pages/images/notification.png";
-import bluechevronright from "../pages/images/bluechevronright.png"
+import bluechevronright from "../pages/images/bluechevronright.png";
 
 const ProfileHeader: NextPage = () => {
   const { data: session, status } = useSession();
@@ -18,8 +18,8 @@ const ProfileHeader: NextPage = () => {
   if (session) {
     content = (
       <div className="flex flex-col w-full">
-        <div className="flex flex-row justify-between items-center bg-white ">
-          <div className="flex flex-row rounded-lg py-5 items-center pl-10">
+        <div className="flex flex-row justify-between items-center bg-slate-100 rounded-xl ">
+          <div className="flex flex-row py-5 items-center pl-10">
             <Image
               className="w-20 h-20 ring-2 ring-gray-300 rounded-lg"
               src={session.user?.image as string}
@@ -33,7 +33,6 @@ const ProfileHeader: NextPage = () => {
                 <h2 className="text-sm pb-2">{session.user?.email}</h2>
               </div>
             </div>
-            <Image src={bluechevronright} alt="" width={20} height={20} className="rotate-90" />
           </div>
           <div className="flex flex-row items-center">
             <div>

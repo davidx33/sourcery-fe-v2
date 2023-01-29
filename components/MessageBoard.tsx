@@ -15,7 +15,7 @@ const MessageBoard: NextPage = () => {
 
   if (session) {
     content = (
-      <div className="flex flex-col bg-white w-full px-3 rounded-lg">
+      <div className="flex flex-col bg-slate-100 w-full px-3 rounded-lg">
         <div className="flex flex-row justify-between items-center py-3 px-3">
           <h2 className="text-2xl">Message Board</h2>
           <div className="flex flex-row items-center pl-16">

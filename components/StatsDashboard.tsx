@@ -16,7 +16,7 @@ const StatsDashboard: NextPage = () => {
 
   if (session) {
     content = (
-      <div className="flex flex-row px-3 bg-white w-full justify-between rounded-lg py-3 items-center">
+      <div className="flex flex-row px-3 bg-slate-100 w-full justify-between rounded-lg py-3 items-center">
         <div className="flex flex-col px-5">
           <p className="text-gray-500">Total Viable Sources</p>
           <div className="flex flex-row items-end pt-2">
