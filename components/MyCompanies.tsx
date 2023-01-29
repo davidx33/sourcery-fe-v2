@@ -1,6 +1,8 @@
 import { FC } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Submission } from "@prisma/client";
+import bluechevronright from "../pages/images/bluechevronright.png";
 
 type Props = {
   submissions: Submission[];
@@ -8,16 +10,21 @@ type Props = {
 
 const MyCompanies: FC<Props> = ({ submissions }) => {
   return (
-    <div className="px-10 py-5 bg-neutral-900 rounded-xl mb-5">
-      <div className="flex flex-col md:flex-row mb-5 pb-3 med:pb-0">
-        <h1 className="text-white text-2xl font-semibold">My Companies</h1>
-
-        <Link
-          href="/dashboard"
-          className="bg-white shadow-lg text-neutral-900 rounded-full px-10 py-2 font-semibold ml-auto text-sm md:text-lg"
-        >
-          Source New Company
-        </Link>
+    <div className="px-10 py-5 bg-white rounded-xl mb-5 ">
+      <div className="flex flex-col md:flex-row md:justify-between mb-5 pb-3 med:pb-0">
+        <h1 className="text-black text-2xl font-semibold">My Companies</h1>
+        <div className="flex flex-row items-center">
+          <Link
+            href="/dashboard"
+            className="text-black border-2  border-solid px-5 py-2 rounded-full hover:bg-white hover:border-black"
+          >
+            Source New Company
+          </Link>
+          <div className="flex flex-row items-center pl-3">
+            <p className="text-sm text-sky-600">See more</p>
+            <Image src={bluechevronright} alt="" height={1} width={20}/>
+          </div>
+        </div>
       </div>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -58,6 +65,7 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
                   <td className="px-6 py-4">
                     {/* @ts-ignore */}
                     {submission.createdAt}
+                  
                   </td>
                   <td className="px-6 py-4">
                     <a

@@ -80,3 +80,7 @@ model Submission {
   missionCritical           String
   relevantExperience        String
 }
+
+model MessageBoard {
+  message                       String
+}

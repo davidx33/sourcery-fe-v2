@@ -20,7 +20,7 @@ const ImAVC: NextPage = () => {
       </div>
 
       <div className="flex justify-center pt-6">
-        <Image src={investordashboard} width={900} height={900} alt="" />
+        <Image src={investordashboard} width={800} height={800} alt="" />
       </div>
     </div>
   );
