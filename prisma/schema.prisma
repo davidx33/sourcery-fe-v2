@@ -79,8 +79,5 @@ model Submission {
   proprietary               String
   missionCritical           String
   relevantExperience        String
-}
-
-model MessageBoard {/
-  message                       String
+  headquarters              String
 }

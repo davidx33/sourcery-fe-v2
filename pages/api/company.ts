@@ -22,12 +22,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     return res.status(403).send({ error: 'please authenticate to access this view' });
   }
   if (req.method === 'POST' && session?.user?.email) {
-    const { companyName, companySector, companyURL, foundingTeamQualification, proprietary, missionCritical, relevantExperience } = req.body;
+    const { companyName, companySector, companyURL, foundingTeamQualification, proprietary, missionCritical, relevantExperience, headquarters } = req.body;
     const company = await prisma.company.create({
       data: {
         name: companyName,
         sector: companySector,
-        url: companyURL,
+        url: companyURL
       }
     });
     await prisma.submission.create({

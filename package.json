@@ -19,14 +19,34 @@
     "tailwind-typewriter": "^1.0.1"
   },
   "devDependencies": {
-    "@types/node": "18.11.3",
+    "@types/node": "^18.11.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.12",
     "file-loader": "^6.2.0",
+    "nodemon": "^2.0.20",
     "postcss": "^8.4.18",
     "prisma": "^4.9.0",
     "tailwindcss": "^3.2.4",
-    "typescript": "4.9.4"
-  }
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  },
+  "name": "sourcery-fe-v2",
+  "description": "This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).",
+  "version": "1.0.0",
+  "main": "next.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidx33/sourcery-fe-v2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidx33/sourcery-fe-v2/issues"
+  },
+  "homepage": "https://github.com/davidx33/sourcery-fe-v2#readme"
 }

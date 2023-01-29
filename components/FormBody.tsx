@@ -21,7 +21,7 @@ const relevantExperiences = [
   "Research (3+ years)",
   "Employment (1-2 years)",
   "Employment (3+ years)",
-  "Leisure (this is okay too 🙂",
+  "Leisure",
 ];
 
 const foundingTeamQualificationOptions = [
@@ -58,7 +58,6 @@ const FormBody: FC = () => {
   const [proprietary, setProprietary] = useState<string>("");
   const [missionCritical, setMissionCritical] = useState<string>("");
   const [relevantExperience, setRelevantExperience] = useState<string>("");
-  const [headquarters, setHeadQuarters] = useState<string>("");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -95,19 +94,10 @@ const FormBody: FC = () => {
             </div>
             <div className="relative z-0 w-full mb-6 group">
               <FormInput
-                label="AngelList/Linkedin/Crunchbase URL"
+                label="Linkedin URL"
                 setState={setCompanyURL}
                 inputName="company_url"
                 state={companyURL}
-              />
-            </div>
-
-            <div className="relative z-0 w-full mb-6 group">
-              <FormInput
-                label="Company HQ"
-                setState={setHeadQuarters}
-                inputName="company_hq"
-                state={headquarters}
               />
             </div>
           </div>
@@ -122,7 +112,7 @@ const FormBody: FC = () => {
           </div>
           <div>
             <FormSelect
-              label="Relevant Sector Experience"
+              label="Your Experience in the Company's Industry"
               setState={setRelevantExperience}
               selectName="relevant_experience"
               state={relevantExperience}
@@ -160,7 +150,8 @@ const FormBody: FC = () => {
         </form>
         <button
           onClick={handleSubmit}
-          className="text-black border-2  border-solid px-5 py-2 rounded-full hover:bg-white hover:border-black">
+          className="text-black border-2  border-solid px-5 py-2 rounded-full hover:bg-white hover:border-black"
+        >
           Submit Company
         </button>
       </div>

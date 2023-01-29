@@ -1,8 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Submission } from "@prisma/client";
-import bluechevronright from "../pages/images/bluechevronright.png";
 import Divider from "../components/Divider";
 
 type Props = {
@@ -28,49 +26,58 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
         <table className="w-full text-sm text-left">
           <thead className="text-xs text-black uppercase bg-white">
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-3 py-3">
                 Company Name
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-3 py-3">
+                Industry
+              </th>
+          
+              <th scope="col" className="px-3 py-3">
+                Team
+              </th>
+              <th scope="col" className="px-3 py-3">
+                Proprietary
+              </th>
+              <th scope="col" className="px-3 py-3">
+                Mission Critical
+              </th>
+              <th scope="col" className="px-3 py-3">
                 Company Sector
               </th>
-              <th scope="col" className="px-6 py-3">
-                Date Submitted
+              <th scope="col" className="px-3 py-3">
+                POC
               </th>
-              <th scope="col" className="px-6 py-3">
-                Actions
+              <th scope="col" className="px-3 py-3">
+                Viable
               </th>
+              <th scope="col" className="px-3 py-3">
+                Invested
+              </th>
+              
             </tr>
           </thead>
           <tbody>
             {submissions.map((submission, index) => {
               return (
                 <tr
-                  className="bg-white border-b dark:bg-neutral-700 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                  className="bg-white dark:bg-slate-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                   key={index}
                 >
                   <th
                     scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black"
                   >
                     {/* @ts-ignore */}
                     {submission.company.name}
                   </th>
-                  <td className="px-6 py-4">
+                  <td className="px-4 py-4">
                     {/* @ts-ignore */}
                     {submission.company.sector}
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="px-4 py-4">
                     {/* @ts-ignore */}
-                    {submission.createdAt}
-                  </td>
-                  <td className="px-6 py-4">
-                    <a
-                      href="#"
-                      className="font-medium text-white dark:text-white hover:underline"
-                    >
-                      Coming Soon
-                    </a>
+                    {submission.company.foundingTeamQualification}
                   </td>
                 </tr>
               );
