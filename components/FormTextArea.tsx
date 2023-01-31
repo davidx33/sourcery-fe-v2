@@ -4,9 +4,11 @@ type Props = {
   label: string;
   rows: number;
   placeholder: string;
+  setState: React.Dispatch<React.SetStateAction<any>>;
+  state: string;
 };
 
-const FormTextArea: FC<Props> = ({ label, rows, placeholder }) => {
+const FormTextArea: FC<Props> = ({ label, rows, placeholder, setState, state }) => {
   return (
     <>
       <div className="pt-2">
@@ -24,6 +26,7 @@ const FormTextArea: FC<Props> = ({ label, rows, placeholder }) => {
           rows={rows}
           className="block p-2.5 w-full text-sm text-gray-900 bg-black rounded-lg border border-gray-300 focus:ring-white focus:border-white dark:bg-black dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-white dark:focus:border-white"
           placeholder={placeholder}
+          onChange={e => setState(e.target.value)} value={state}
         ></textarea>
       </div>
     </>

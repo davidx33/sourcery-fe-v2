@@ -1,10 +1,9 @@
 import React from "react";
 import type { NextPage } from "next";
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import Image from "next/image";
 import divider from "../pages/images/divider.png";
-import notification from "../pages/images/notification.png";
-import bluechevronright from "../pages/images/bluechevronright.png";
+import logout from "../pages/images/logout.png";
 
 const ProfileHeader: NextPage = () => {
   const { data: session, status } = useSession();
@@ -36,13 +35,15 @@ const ProfileHeader: NextPage = () => {
           </div>
           <div className="flex flex-row items-center">
             <div>
-              <p className="text-sm">Contact Sourcery HQ</p>
+              <p className="text-sm">
+                <a href="mailto:thexudavid@gmail.com">Contact Sourcery HQ</a>
+              </p>
             </div>
             <div className="px-5">
               <Image src={divider} alt="" width={1} height={1} />
             </div>
-            <div className="pr-2">
-              <Image src={notification} alt="" width={60} height={60} />
+            <div className="pr-8 cursor-pointer" onClick={() => signOut()}>
+              <Image src={logout} alt="" width={30} height={30} />
             </div>
           </div>
         </div>

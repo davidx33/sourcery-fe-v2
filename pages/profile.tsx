@@ -3,13 +3,14 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import prisma from "../lib/prisma";
 import { Submission } from "@prisma/client";
+import { MessageBoard } from "@prisma/client";
 import { getSession } from "next-auth/react";
 import ProfileHeader from "../components/ProfileHeader";
 import MyCompanies from "../components/MyCompanies";
 import Layout from "../components/Layout";
 import StatsDashboard from "../components/StatsDashboard";
 import ReviewThese from "../components/ReviewThese";
-import MessageBoard from "../components/MessageBoard";
+import MsgBoard from "../components/MessageBoard";
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const session = await getSession({ req });
@@ -18,9 +19,11 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     return {
       props: {
         submissions: [],
+        messageBoard: [],
       },
     };
   }
+
 
   const submissions = await prisma.submission.findMany({
     where: {
@@ -46,8 +49,11 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   };
 };
 
+
+
 type Props = {
   submissions: Submission[];
+  messageBoard: MessageBoard[];
 };
 
 const Profile: NextPage<Props> = ({ submissions }) => {
@@ -65,7 +71,7 @@ const Profile: NextPage<Props> = ({ submissions }) => {
             <ReviewThese />
           </div>
           <div className="w-1/2 pl-3">
-            <MessageBoard />
+            <MsgBoard />
           </div>
         </div>
       </div>

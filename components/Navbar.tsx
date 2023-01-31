@@ -41,7 +41,7 @@ const Navbar: NextPage = () => {
           className="md:px-5 pl-2 py-3 rounded-md"
           onClick={() => signOut()}
         >
-          <a className=" font-semibold" href="#">
+          <a className="font-semibold" href="#">
             Sign Out
           </a>
         </button>

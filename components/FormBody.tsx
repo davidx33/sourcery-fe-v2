@@ -8,7 +8,7 @@ import FormTextArea from "./FormTextArea";
 const companySectors = [
   "Healthcare",
   "Education",
-  "Consumer products/food",
+  "Consumer",
   "FinTech",
   "B2B SaaS",
   "Web3",
@@ -58,7 +58,7 @@ const FormBody: FC = () => {
   const [proprietary, setProprietary] = useState<string>("");
   const [missionCritical, setMissionCritical] = useState<string>("");
   const [relevantExperience, setRelevantExperience] = useState<string>("");
-
+  const [additionalNotes, setAdditionalNotes] = useState<string>("");
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     await fetch("/api/company", {
@@ -75,6 +75,7 @@ const FormBody: FC = () => {
         proprietary: proprietary,
         missionCritical: missionCritical,
         relevantExperience: relevantExperience,
+        additionalNotes: additionalNotes
       }),
     });
     router.refresh();
@@ -145,6 +146,8 @@ const FormBody: FC = () => {
               label="Additional notes and research"
               rows={6}
               placeholder="Enter information here..."
+              state={additionalNotes}
+              setState={setAdditionalNotes}
             />
           </div>
         </form>

@@ -1,7 +1,9 @@
 import { FC } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import linkedin from "../pages/images/linkedin.png";
+import expand from "../pages/images/expand.png";
 import { Submission } from "@prisma/client";
-import Divider from "../components/Divider";
 
 type Props = {
   submissions: Submission[];
@@ -21,8 +23,8 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
           </Link>
         </div>
       </div>
-      <Divider />
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg pt-3">
+
+      <div className="relative overflow-x-auto shadow-md sm:rounded-lg ">
         <table className="w-full text-sm text-left">
           <thead className="text-xs text-black uppercase bg-white">
             <tr>
@@ -32,7 +34,7 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
               <th scope="col" className="px-3 py-3">
                 Industry
               </th>
-          
+
               <th scope="col" className="px-3 py-3">
                 Team
               </th>
@@ -42,11 +44,19 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
               <th scope="col" className="px-3 py-3">
                 Mission Critical
               </th>
-              <th scope="col" className="px-3 py-3">
-                Company Sector
+
+              <th scope="col" className=" flex flex-row items-end px-3 py-3">
+                <Image
+                  src={linkedin}
+                  alt=""
+                  width={30}
+                  height={60}
+                  className="pr-2"
+                />
+                URL
               </th>
               <th scope="col" className="px-3 py-3">
-                POC
+                Notes
               </th>
               <th scope="col" className="px-3 py-3">
                 Viable
@@ -54,14 +64,14 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
               <th scope="col" className="px-3 py-3">
                 Invested
               </th>
-              
             </tr>
           </thead>
           <tbody>
             {submissions.map((submission, index) => {
+              // const companyURL = `${submissions.company.url}`
               return (
                 <tr
-                  className="bg-white dark:bg-slate-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                  className=" bg-white dark:bg-slate-100 dark:border-gray-700"
                   key={index}
                 >
                   <th
@@ -71,13 +81,28 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
                     {/* @ts-ignore */}
                     {submission.company.name}
                   </th>
-                  <td className="px-4 py-4">
+                  <td className="flex  px-4 py-4">
                     {/* @ts-ignore */}
-                    {submission.company.sector}
+                    <div className="rounded-full bg-green-200 px-2 py-2">
+                      {submission.company.sector}
+                    </div>
                   </td>
                   <td className="px-4 py-4">
                     {/* @ts-ignore */}
-                    {submission.company.foundingTeamQualification}
+                    {submission.foundingTeamQualification}
+                  </td>
+                  <td className="px-4 py-4">
+                    {/* @ts-ignore */}
+                    {submission.proprietary}
+                  </td>
+                  <td className="px-4 py-4">
+                    {/* @ts-ignore */}
+                    {submission.missionCritical}
+                  </td>
+                  <td className="px-4 py-4">
+                    {/* @ts-ignore */}
+
+                    {submission.company.url}
                   </td>
                 </tr>
               );

@@ -63,9 +63,9 @@ model Company {
   id         String       @id @default(cuid())
   name       String
   sector     String
-  url        String
   Submission Submission[]
   createdAt  DateTime     @default(now())
+  url        String
 }
 
 model Submission {
@@ -79,5 +79,18 @@ model Submission {
   proprietary               String
   missionCritical           String
   relevantExperience        String
-  headquarters              String
+  additionalNotes           String  @default("Notes")  
+}
+
+model MessageBoard {
+  id             String @id @default(cuid())
+  welcomeMessage String
+  sentMonth      String
+  sentDate       String
+}
+
+model ReviewThese {
+  id             String @id @default(cuid())
+  companyName    String
+  industry       String
 }
