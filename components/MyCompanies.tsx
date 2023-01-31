@@ -2,7 +2,6 @@ import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import linkedin from "../pages/images/linkedin.png";
-import expand from "../pages/images/expand.png";
 import { Submission } from "@prisma/client";
 
 type Props = {
@@ -68,7 +67,6 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
           </thead>
           <tbody>
             {submissions.map((submission, index) => {
-              // const companyURL = `${submissions.company.url}`
               return (
                 <tr
                   className=" bg-white dark:bg-slate-100 dark:border-gray-700"

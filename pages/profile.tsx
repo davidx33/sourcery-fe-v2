@@ -33,21 +33,29 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
       company: true,
     },
   });
+
+  const messageBoard = prisma.messageBoard.findMany()
+
   res.statusCode = 200;
   if (submissions !== undefined) {
     // JSON parse and stringify is needed becase of date object that is being returned
     return {
       props: {
         submissions: JSON.parse(JSON.stringify(submissions)),
+        messageBoard: JSON.parse(JSON.stringify(messageBoard)),
+
       },
     };
   }
   return {
     props: {
       submissions: [],
+      messageBoard: [],
     },
   };
 };
+
+
 
 
 
@@ -56,7 +64,7 @@ type Props = {
   messageBoard: MessageBoard[];
 };
 
-const Profile: NextPage<Props> = ({ submissions }) => {
+const Profile: NextPage<Props> = ({ submissions, messageBoard }) => {
   return (
     <Layout>
       <Head>
@@ -71,7 +79,7 @@ const Profile: NextPage<Props> = ({ submissions }) => {
             <ReviewThese />
           </div>
           <div className="w-1/2 pl-3">
-            <MsgBoard />
+            <MsgBoard messageBoard={messageBoard} />
           </div>
         </div>
       </div>
