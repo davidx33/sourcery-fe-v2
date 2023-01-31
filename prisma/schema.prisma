@@ -94,3 +94,12 @@ model ReviewThese {
   companyName    String
   industry       String
 }
+
+model statsDashboard {
+   id             String @id @default(cuid())
+   totalViableSources  String
+   totalComp           String
+   percentileSourcers  String
+   totalCompaniesReviewed  String
+
+}
