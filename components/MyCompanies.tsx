@@ -60,6 +60,7 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
           <tbody>
             {submissions.map((submission, index) => {
               console.log(submission.pocLinkedin);
+              console.log(submission.pocEmail);
               return (
                 <tr
                   className=" bg-white dark:bg-slate-100 dark:border-gray-700"
@@ -96,7 +97,10 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
                       <a href={submission.pocLinkedin}>
                         <Image src={linkedin} alt="" width={30} height={30} />
                       </a>
-                      <a href={submission.pocLinkedin} className="pl-3">
+                      <a
+                        href={"mailto:" + submission.pocEmail}
+                        className="pl-3"
+                      >
                         <Image src={email} alt="" width={30} height={30} />
                       </a>
                     </div>

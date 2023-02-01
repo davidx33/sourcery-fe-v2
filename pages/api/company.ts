@@ -56,7 +56,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       relevantExperience: relevantExperience,
       additionalNotes: additonalNotes,
       pocEmail: pocEmail,
-      pocLinkedin: pocLinkedin
+    pocLinkedin: pocLinkedin
     });
   }
 }

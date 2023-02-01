@@ -120,7 +120,7 @@ const FormBody: FC = () => {
               <FormInput
                 label="Point of Contact - Linkedin URL"
                 setState={setPocLinkedin}
-                inputName="company_url"
+                inputName="poc_linkedin"
                 state={pocLinkedin}
               />
             </div>
