@@ -1,7 +1,4 @@
 import { FC } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import bluechevronright from "../pages/images/bluechevronright.png";
 import Divider from "./Divider";
 import { MessageBoard } from "@prisma/client";
 
