@@ -59,6 +59,9 @@ const FormBody: FC = () => {
   const [missionCritical, setMissionCritical] = useState<string>("");
   const [relevantExperience, setRelevantExperience] = useState<string>("");
   const [additionalNotes, setAdditionalNotes] = useState<string>("");
+  const [pocLinkedin, setPocLinkedin] = useState<string>("");
+  const [pocEmail, setPocEmail] = useState<string>("");
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     await fetch("/api/company", {
@@ -75,7 +78,9 @@ const FormBody: FC = () => {
         proprietary: proprietary,
         missionCritical: missionCritical,
         relevantExperience: relevantExperience,
-        additionalNotes: additionalNotes
+        additionalNotes: additionalNotes,
+        pocLinkedin: pocLinkedin,
+        pocEmail: pocEmail
       }),
     });
     router.refresh();
@@ -99,6 +104,24 @@ const FormBody: FC = () => {
                 setState={setCompanyURL}
                 inputName="company_url"
                 state={companyURL}
+              />
+            </div>
+          </div>
+          <div className="grid md:grid-cols-3 md:gap-6">
+            <div className="relative z-0 w-full mb-6 group">
+              <FormInput
+                label="Point of Contact - Email"
+                setState={setPocEmail}
+                inputName="poc_email"
+                state={pocEmail}
+              />
+            </div>
+            <div className="relative z-0 w-full mb-6 group">
+              <FormInput
+                label="Point of Contact - Linkedin URL"
+                setState={setPocLinkedin}
+                inputName="company_url"
+                state={pocLinkedin}
               />
             </div>
           </div>

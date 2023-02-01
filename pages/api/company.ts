@@ -11,6 +11,8 @@ type Data = {
   missionCritical: string;
   relevantExperience: string;
   additionalNotes: string;
+  pocEmail: string;
+  pocLinkedin: string;
 }
 
 type Error = {
@@ -23,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     return res.status(403).send({ error: 'please authenticate to access this view' });
   }
   if (req.method === 'POST' && session?.user?.email) {
-    const { companyName, companySector, companyURL, foundingTeamQualification, proprietary, missionCritical, relevantExperience, additonalNotes } = req.body;
+    const { companyName, companySector, companyURL, foundingTeamQualification, proprietary, missionCritical, relevantExperience, additonalNotes, pocEmail, pocLinkedin } = req.body;
     const company = await prisma.company.create({
       data: {
         name: companyName,
@@ -39,7 +41,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         proprietary: proprietary,
         missionCritical: missionCritical,
         relevantExperience: relevantExperience,
-        additionalNotes: additonalNotes
+        additionalNotes: additonalNotes,
+        pocEmail: pocEmail,
+        pocLinkedin: pocLinkedin
       }
     })
     res.status(200).json({
@@ -51,6 +55,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       missionCritical: missionCritical,
       relevantExperience: relevantExperience,
       additionalNotes: additonalNotes,
+      pocEmail: pocEmail,
+      pocLinkedin: pocLinkedin
     });
   }
 }

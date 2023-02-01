@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import linkedin from "../pages/images/linkedin.png";
 import { Submission } from "@prisma/client";
+import email from "../pages/images/mail.png";
 
 type Props = {
   submissions: Submission[];
@@ -10,7 +11,7 @@ type Props = {
 
 const MyCompanies: FC<Props> = ({ submissions }) => {
   return (
-    <div className="px-10 py-5 bg-slate-100 rounded-xl mb-5 ">
+    <div className="px-10 py-5 bg-slate-100 rounded-xl mb-5">
       <div className="flex flex-col md:flex-row md:justify-between mb-5 med:pb-0">
         <h1 className="text-black text-2xl font-semibold">My Companies</h1>
         <div className="flex flex-row items-center">
@@ -45,18 +46,9 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
               </th>
 
               <th scope="col" className=" flex flex-row items-end px-3 py-3">
-                <Image
-                  src={linkedin}
-                  alt=""
-                  width={30}
-                  height={60}
-                  className="pr-2"
-                />
-                URL
+                POC
               </th>
-              <th scope="col" className="px-3 py-3">
-                Notes
-              </th>
+
               <th scope="col" className="px-3 py-3">
                 Viable
               </th>
@@ -67,6 +59,7 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
           </thead>
           <tbody>
             {submissions.map((submission, index) => {
+              console.log(submission.pocLinkedin);
               return (
                 <tr
                   className=" bg-white dark:bg-slate-100 dark:border-gray-700"
@@ -99,8 +92,14 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
                   </td>
                   <td className="px-4 py-4">
                     {/* @ts-ignore */}
-
-                    {submission.company.url}
+                    <div className="flex flex-row cursor-pointer">
+                      <a href={submission.pocLinkedin}>
+                        <Image src={linkedin} alt="" width={30} height={30} />
+                      </a>
+                      <a href={submission.pocLinkedin} className="pl-3">
+                        <Image src={email} alt="" width={30} height={30} />
+                      </a>
+                    </div>
                   </td>
                 </tr>
               );

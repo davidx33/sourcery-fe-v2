@@ -35,11 +35,15 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     },
   });
 
-  const messageBoard = prisma.messageBoard.findMany();
-  const reviewThese = prisma.reviewThese.findMany();
+  const messageBoard = await prisma.messageBoard.findMany();
+  const reviewThese = await prisma.reviewThese.findMany();
 
   res.statusCode = 200;
-  if (submissions !== undefined  ) {
+  if (
+    submissions !== undefined &&
+    messageBoard !== undefined &&
+    reviewThese !== undefined
+  ) {
     // JSON parse and stringify is needed becase of date object that is being returned
     return {
       props: {
@@ -64,7 +68,11 @@ type Props = {
   reviewThese: ReviewThese[];
 };
 
-const Profile: NextPage<Props> = ({ submissions, messageBoard }) => {
+const Profile: NextPage<Props> = ({
+  submissions,
+  messageBoard,
+  reviewThese,
+}) => {
   return (
     <Layout>
       <Head>
@@ -72,14 +80,14 @@ const Profile: NextPage<Props> = ({ submissions, messageBoard }) => {
         <meta name="description" content="Find companies. Make money." />
       </Head>
       <ProfileHeader />
-      <StatsDashboard />
+      <StatsDashboard submit={submissions} />
       <div className="flex flex-col">
         <div className="flex flex-row">
           <div className="w-1/2 pr-3">
-            <ReviewCompanies reviewThese={reviewThese} />
+            <ReviewCompanies companies={reviewThese} />
           </div>
           <div className="w-1/2 pl-3">
-            <MsgBoard messageBoard={messageBoard} />
+            <MsgBoard messages={messageBoard} />
           </div>
         </div>
       </div>

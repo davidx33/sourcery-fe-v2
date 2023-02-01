@@ -26,7 +26,7 @@ const ProfileHeader: NextPage = () => {
               height={20}
               width={20}
             />
-            <div className="flex flex-col pl-0 med:pl-10 pr-10">
+            <div className="flex flex-col pl-0 md:pl-10 md:pr-10">
               <div className="md:pl-8">
                 <h1 className="text-sm pb-2">{session.user?.name}</h1>
                 <h2 className="text-sm pb-2">{session.user?.email}</h2>

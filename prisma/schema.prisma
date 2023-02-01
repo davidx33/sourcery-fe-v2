@@ -79,27 +79,30 @@ model Submission {
   proprietary               String
   missionCritical           String
   relevantExperience        String
-  additionalNotes           String  @default("Notes")  
+  additionalNotes           String   @default("Notes")
+  pocEmail                  String   @default("thexudavid@gmail.com")
+  pocLinkedin               String   @default("https://www.linkedin.com/in/david-xu2/")
 }
 
 model MessageBoard {
   id             String @id @default(cuid())
+  header         String @default("Headline")
   welcomeMessage String
   sentMonth      String
   sentDate       String
 }
 
 model ReviewThese {
-  id             String @id @default(cuid())
-  companyName    String
-  industry       String
+  id          String @id @default(cuid())
+  companyName String
+  industry    String
+  url         String @default("linkedin.com")
 }
 
 model statsDashboard {
-   id             String @id @default(cuid())
-   totalViableSources  String
-   totalComp           String
-   percentileSourcers  String
-   totalCompaniesReviewed  String
-
+  id                     String @id @default(cuid())
+  totalViableSources     String
+  totalComp              String
+  percentileSourcers     String
+  totalCompaniesReviewed String
 }
