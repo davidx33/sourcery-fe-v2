@@ -26,7 +26,7 @@ const ProfileHeader: NextPage = () => {
               height={20}
               width={20}
             />
-            <div className="flex flex-col pl-0 md:pl-10 md:pr-10">
+            <div className="flex flex-col pl-0">
               <div className="md:pl-8">
                 <h1 className="text-sm pb-2">{session.user?.name}</h1>
                 <h2 className="text-sm pb-2">{session.user?.email}</h2>
@@ -34,16 +34,10 @@ const ProfileHeader: NextPage = () => {
             </div>
           </div>
           <div className="flex flex-row items-center">
-            <div>
+            <div className="pr-8">
               <p className="text-sm">
                 <a href="mailto:thexudavid@gmail.com">Contact Sourcery HQ</a>
               </p>
-            </div>
-            <div className="px-5">
-              <Image src={divider} alt="" width={1} height={1} />
-            </div>
-            <div className="pr-8 cursor-pointer" onClick={() => signOut()}>
-              <Image src={logout} alt="" width={30} height={30} />
             </div>
           </div>
         </div>

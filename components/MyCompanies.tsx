@@ -13,7 +13,7 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
   return (
     <div className="px-10 py-5 bg-slate-100 rounded-xl mb-5">
       <div className="flex flex-col md:flex-row md:justify-between mb-5 med:pb-0">
-        <h1 className="text-black text-2xl font-semibold">My Companies</h1>
+        <h1 className="text-black text-2xl">My Companies</h1>
         <div className="flex flex-row items-center">
           <Link
             href="/dashboard"
