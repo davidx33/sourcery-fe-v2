@@ -80,7 +80,7 @@ const FormBody: FC = () => {
         relevantExperience: relevantExperience,
         additionalNotes: additionalNotes,
         pocLinkedin: pocLinkedin,
-        pocEmail: pocEmail
+        pocEmail: pocEmail,
       }),
     });
     router.refresh();
@@ -134,13 +134,12 @@ const FormBody: FC = () => {
               options={companySectors}
             />
           </div>
-          <div>
-            <FormSelect
-              label="Your Experience in the Company's Industry"
+          <div className="relative z-0 w-full mb-6 group">
+            <FormInput
+              label="Investment Thesis"
               setState={setRelevantExperience}
-              selectName="relevant_experience"
+              inputName="poc_linkedin"
               state={relevantExperience}
-              options={relevantExperiences}
             />
           </div>
           <div className="mt-3">

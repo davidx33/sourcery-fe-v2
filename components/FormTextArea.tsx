@@ -24,7 +24,7 @@ const FormTextArea: FC<Props> = ({ label, rows, placeholder, setState, state }) 
         <textarea
           id="message"
           rows={rows}
-          className="block p-2.5 w-full text-sm  bg-text-gray-500 rounded-lg border border-gray-300 focus:ring-white focus:border-white dark:bg-slate-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-white dark:focus:border-white"
+          className="block p-2.5 w-full text-sm  bg-text-gray-500 rounded-lg border border-gray-300 focus:ring-white focus:border-white dark:bg-slate-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-white dark:focus:border-white"
           placeholder={placeholder}
           onChange={e => setState(e.target.value)} value={state}
         ></textarea>
