@@ -84,7 +84,7 @@ model Submission {
   pocLinkedin               String   @default("https://www.linkedin.com/in/david-xu2/")
 }
 
-model MessageBoard {
+model Message {
   id             String @id @default(cuid())
   header         String @default("Headline")
   welcomeMessage String

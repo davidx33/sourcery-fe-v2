@@ -3,15 +3,15 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import prisma from "../lib/prisma";
 import { Submission } from "@prisma/client";
-import { MessageBoard } from "@prisma/client";
+import { Message } from "@prisma/client";
 import { ReviewThese } from "@prisma/client";
 import { getSession } from "next-auth/react";
 import ProfileHeader from "../components/ProfileHeader";
+import MessageBoard from "../components/MessageBoard";
 import MyCompanies from "../components/MyCompanies";
 import Layout from "../components/Layout";
 import StatsDashboard from "../components/StatsDashboard";
 import ReviewCompanies from "../components/ReviewCompanies";
-import MsgBoard from "../components/MessageBoard";
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const session = await getSession({ req });
@@ -20,7 +20,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     return {
       props: {
         submissions: [],
-        messageBoard: [],
+        messages: [],
         reviewThese: [],
       },
     };
@@ -35,20 +35,20 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     },
   });
 
-  const messageBoard = await prisma.messageBoard.findMany();
+  const messages = await prisma.message.findMany();
   const reviewThese = await prisma.reviewThese.findMany();
 
   res.statusCode = 200;
   if (
     submissions !== undefined &&
-    messageBoard !== undefined &&
+    messages !== undefined &&
     reviewThese !== undefined
   ) {
     // JSON parse and stringify is needed becase of date object that is being returned
     return {
       props: {
         submissions: JSON.parse(JSON.stringify(submissions)),
-        messageBoard: JSON.parse(JSON.stringify(messageBoard)),
+        messages: JSON.parse(JSON.stringify(messages)),
         reviewThese: JSON.parse(JSON.stringify(reviewThese)),
       },
     };
@@ -56,7 +56,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   return {
     props: {
       submissions: [],
-      messageBoard: [],
+      messages: [],
       reviewThese: [],
     },
   };
@@ -64,15 +64,11 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
 
 type Props = {
   submissions: Submission[];
-  messageBoard: MessageBoard[];
+  messages: Message[];
   reviewThese: ReviewThese[];
 };
 
-const Profile: NextPage<Props> = ({
-  submissions,
-  messageBoard,
-  reviewThese,
-}) => {
+const Profile: NextPage<Props> = ({ submissions, messages, reviewThese }) => {
   return (
     <Layout>
       <Head>
@@ -87,7 +83,7 @@ const Profile: NextPage<Props> = ({
             <ReviewCompanies companies={reviewThese} />
           </div>
           <div className="w-1/2 pl-3">
-            <MsgBoard messages={messageBoard} />
+            <MessageBoard messages={messages} />
           </div>
         </div>
       </div>

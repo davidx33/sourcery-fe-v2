@@ -1,9 +1,9 @@
 import { FC } from "react";
 import Divider from "./Divider";
-import { MessageBoard } from "@prisma/client";
+import { Message } from "@prisma/client";
 
 type Props = {
-  messages: MessageBoard[];
+  messages: Message[];
 };
 
 const MessageBoard: FC<Props> = ({ messages }) => {
