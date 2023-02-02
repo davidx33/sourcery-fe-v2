@@ -36,12 +36,12 @@ const Profile: NextPage<Props> = ({ submissions, messages, reviewThese }) => {
         <title>Profile</title>
         <meta name="description" content="Find companies. Make money." />
       </Head>
-      <h1 className="text-3xl mb-5 font-semibold">Welcome back, {session.user?.name}.</h1>
+      <h1 className="md:text-3xl text-xl mb-5 font-semibold text-left">Welcome back, {session.user?.name}.</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="md:col-span-3">
           <StatsDashboard submissions={submissions} />
         </div>
-        <div className="md:row-span-2">
+        <div className="md:col-span-1">
           <ProfileHeader />
         </div>
         <div className="md:col-span-1">
@@ -50,7 +50,7 @@ const Profile: NextPage<Props> = ({ submissions, messages, reviewThese }) => {
         <div className="md:col-span-1">
           <MessageBoard messages={messages} />
         </div>
-        <div className="md:col-span-2">
+        <div className="md:col-span-3">
           <MyCompanies submissions={submissions} />
         </div>
       </div>
