@@ -59,8 +59,6 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
           </thead>
           <tbody>
             {submissions.map((submission, index) => {
-              console.log(submission.pocLinkedin);
-              console.log(submission.pocEmail);
               return (
                 <tr
                   className=" bg-white dark:bg-slate-100 dark:border-gray-700"
@@ -74,8 +72,8 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
                     {submission.company.name}
                   </th>
                   <td className="flex  px-4 py-4">
-                    {/* @ts-ignore */}
                     <div className="rounded-full bg-green-200 px-2 py-2">
+                      {/* @ts-ignore */}
                       {submission.company.sector}
                     </div>
                   </td>

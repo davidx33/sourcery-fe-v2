@@ -20,7 +20,7 @@ const ReviewCompanies: FC<Props> = ({ companies }) => {
           <Divider />
           {companies?.map((reviewCompany, index) => {
             return (
-              <div className="flex flex-row justify-evenly px-3 py-5 text-xl">
+              <div className="flex flex-row justify-evenly px-3 py-5 text-xl" key={index}>
                 <div>{reviewCompany.companyName}</div>
                 <div>{reviewCompany.industry}</div>
                 <div>
