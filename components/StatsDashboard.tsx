@@ -17,7 +17,7 @@ const StatsDashboard: FC<Props> = ({ submit }) => {
             <div className="flex flex-row items-end pt-2">
               <h1 className="text-2xl">{submit.length }</h1>
               <p className="pl-2 pb-1 text-sm text-green-500">0%</p>
-              <p className="pl-1 pb-1 text-sm text-gray-500">in last week</p>
+              <p className="pl-1 pb-1 text-sm text-gray-500">vs. last week</p>
             </div>
           </div>
           <div className="flex flex-col px-5 pl-5">
@@ -46,7 +46,7 @@ const StatsDashboard: FC<Props> = ({ submit }) => {
               </div>
 
               <p className="pl-1 pb-1 text-sm text-gray-500">
-                in the last week
+                vs. last week
               </p>
             </div>
           </div>
