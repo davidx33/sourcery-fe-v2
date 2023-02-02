@@ -5,13 +5,60 @@ import prisma from "../lib/prisma";
 import { Submission } from "@prisma/client";
 import { Message } from "@prisma/client";
 import { ReviewThese } from "@prisma/client";
-import { getSession } from "next-auth/react";
+import { getSession, useSession } from "next-auth/react";
 import ProfileHeader from "../components/ProfileHeader";
 import MessageBoard from "../components/MessageBoard";
 import MyCompanies from "../components/MyCompanies";
 import Layout from "../components/Layout";
 import StatsDashboard from "../components/StatsDashboard";
 import ReviewCompanies from "../components/ReviewCompanies";
+
+
+type Props = {
+  submissions: Submission[];
+  messages: Message[];
+  reviewThese: ReviewThese[];
+};
+
+const Profile: NextPage<Props> = ({ submissions, messages, reviewThese }) => {
+  const { data: session, status } = useSession();
+
+  if (!session) {
+    return (
+      <Layout>
+        <h1 className="text-center font-semibold text-3xl">Loading Profile...</h1>
+      </Layout>
+    );
+  }
+  return (
+    <Layout>
+      <Head>
+        <title>Profile</title>
+        <meta name="description" content="Find companies. Make money." />
+      </Head>
+      <h1 className="text-3xl mb-5 font-semibold">Welcome back, {session.user?.name}.</h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="md:col-span-3">
+          <StatsDashboard submissions={submissions} />
+        </div>
+        <div className="md:row-span-2">
+          <ProfileHeader />
+        </div>
+        <div className="md:col-span-1">
+          <ReviewCompanies companies={reviewThese} />
+        </div>
+        <div className="md:col-span-1">
+          <MessageBoard messages={messages} />
+        </div>
+        <div className="md:col-span-2">
+          <MyCompanies submissions={submissions} />
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export default Profile;
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const session = await getSession({ req });
@@ -61,37 +108,3 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     },
   };
 };
-
-type Props = {
-  submissions: Submission[];
-  messages: Message[];
-  reviewThese: ReviewThese[];
-};
-
-const Profile: NextPage<Props> = ({ submissions, messages, reviewThese }) => {
-  return (
-    <Layout>
-      <Head>
-        <title>Sourcery</title>
-        <meta name="description" content="Find companies. Make money." />
-      </Head>
-      <ProfileHeader />
-      <StatsDashboard submit={submissions} />
-      <div className="flex flex-col">
-        <div className="flex flex-col md:flex-row">
-          <div className="md:w-1/2 pr-3">
-            <ReviewCompanies companies={reviewThese} />
-          </div>
-          <div className="md:w-1/2 pl-3">
-            <MessageBoard messages={messages} />
-          </div>
-        </div>
-      </div>
-      <div className="pt-3">
-        <MyCompanies submissions={submissions} />
-      </div>
-    </Layout>
-  );
-};
-
-export default Profile;
