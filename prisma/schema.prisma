@@ -79,7 +79,7 @@ model Submission {
   proprietary               String
   missionCritical           String
   relevantExperience        String
-  additionalNotes           String   @default("Notes")
+  additionalNotes           String   @default("No notes")
   pocEmail                  String   @default("thexudavid@gmail.com")
   pocLinkedin               String   @default("https://www.linkedin.com/in/david-xu2/")
 }

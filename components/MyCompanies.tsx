@@ -110,6 +110,7 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
           </thead>
           <tbody>
             {submissions.map((submission, index) => {
+              console.log(submission.additionalNotes)
               return (
                 <tr
                   className=" bg-white dark:bg-slate-100 dark:border-gray-700"
@@ -148,19 +149,17 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
                       {submission.missionCritical}
                     </td>
                   )}
-
-                  {collapsed && (
-                    <td className="cursor-pointer px-4 py-4">
-                      {/* @ts-ignore */}
-
-                      <div>{submission.additionalNotes}</div>
-                    </td>
-                  )}
-
                   {collapsed && (
                     <td className="px-4 py-4 cursor-pointer">
                       {/* @ts-ignore */}
                       <div>{submission.relevantExperience}</div>
+                    </td>
+                  )}
+
+                  {collapsed && (
+                    <td className="cursor-pointer px-4 py-4">
+                      {/* @ts-ignore */}
+                      <div>{submission.additionalNotes}</div>
                     </td>
                   )}
 
