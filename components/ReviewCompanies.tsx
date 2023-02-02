@@ -20,11 +20,7 @@ const ReviewCompanies: FC<Props> = ({ companies }) => {
           <Divider />
           {companies?.map((reviewCompany, index) => {
             return (
-<<<<<<< Updated upstream
               <div className="flex flex-row justify-evenly px-3 py-5 text-xl" key={index}>
-=======
-              <div className="flex flex-row justify-between px-3 py-5 text-xl">
->>>>>>> Stashed changes
                 <div>{reviewCompany.companyName}</div>
                 <div>{reviewCompany.industry}</div>
                 <div>
