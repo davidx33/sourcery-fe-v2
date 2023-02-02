@@ -10,7 +10,7 @@ const Hero: NextPage = () => {
           <div className="text-black pl-9 cursor-pointer">Product</div>
         </Link>
         <div className="pl-9 cursor-pointer text-black">
-          <a href="mailto:thexudavid@gmail.com">Contact</a>
+          <a href="mailto:sourceryinfo@gmail.com">Contact</a>
         </div>
       </div>
       <div className="text-black pl-9 pb-5">Sourcery © 2022</div>

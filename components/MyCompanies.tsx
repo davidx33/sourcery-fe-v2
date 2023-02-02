@@ -33,14 +33,24 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
             />
           </div>
         </div>
+        <div className="flex flex-col md:flex-row">
+          <div className="flex md:flex-row md:justify-left justify-center items-center md:pt-0 pr-3 pt-5">
+            <Link
+              href="/viability"
+              className="text-black border-2  border-solid px-5 py-2 rounded-full hover:bg-white hover:border-black"
+            >
+              View Viability Criteria
+            </Link>
+          </div>
 
-        <div className="flex flex-row md:justify-left justify-center items-center md:pt-0 pt-5">
-          <Link
-            href="/dashboard"
-            className="text-black border-2  border-solid px-5 py-2 rounded-full hover:bg-white hover:border-black"
-          >
-            Source New Company
-          </Link>
+          <div className="flex flex-row md:justify-left justify-center items-center md:pt-0 pt-5">
+            <Link
+              href="/dashboard"
+              className="text-black border-2  border-solid px-5 py-2 rounded-full hover:bg-white hover:border-black"
+            >
+              Source New Company
+            </Link>
+          </div>
         </div>
       </div>
 

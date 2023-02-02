@@ -1,9 +1,10 @@
 import React from "react";
 import type { NextPage } from "next";
-import { useSession, signOut } from "next-auth/react";
+import Link from "next/link";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
+import venmo from "../pages/images/venmo.jpg";
 import divider from "../pages/images/divider.png";
-import logout from "../pages/images/logout.png";
 
 const ProfileHeader: NextPage = () => {
   const { data: session, status } = useSession();
@@ -34,10 +35,18 @@ const ProfileHeader: NextPage = () => {
             </div>
           </div>
           <div className="flex flex-row items-center py-5">
-            <div className="pr-8">
+            <div className="">
               <p className="text-sm">
-                <a href="mailto:thexudavid@gmail.com">Contact Sourcery HQ</a>
+                <a href="mailto:sourceryinfo@gmail.com">Contact Sourcery HQ</a>
               </p>
+            </div>
+            <div className="px-5">
+              <Image src={divider} alt="" />
+            </div>
+            <div className="pr-8 cursor-pointer">
+              <Link href="/payments">
+                <Image src={venmo} alt="" width={50} height={50} />
+              </Link>
             </div>
           </div>
         </div>

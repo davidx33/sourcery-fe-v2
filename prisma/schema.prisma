@@ -106,3 +106,9 @@ model statsDashboard {
   percentileSourcers     String
   totalCompaniesReviewed String
 }
+
+model venmoInfo {
+  id                     String @id @default(cuid())
+  bestEmail              String
+  venmoUsername          String
+}

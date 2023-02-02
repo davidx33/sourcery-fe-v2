@@ -13,7 +13,7 @@ const Interested: NextPage = () => {
           <div className="pr-3">
             <button className="text-black border-2  border-solid px-5 py-2 rounded-full hover:bg-white hover:border-black">
               <h2>
-                <a href="mailto:thexudavid@gmail.com">Contact us</a>
+                <a href="mailto:sourceryinfo@gmail.com">Contact us</a>
               </h2>
             </button>
           </div>

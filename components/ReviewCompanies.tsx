@@ -1,9 +1,9 @@
 import { FC } from "react";
 import Image from "next/image";
-import bluechevronright from "../pages/images/bluechevronright.png";
 import { ReviewThese } from "@prisma/client";
 import doubleright from "../pages/images/right.png";
 import Divider from "./Divider";
+import Vori from "../pages/images/vori.jpg";
 
 type Props = {
   companies: ReviewThese[];
