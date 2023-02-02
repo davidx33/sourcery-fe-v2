@@ -1,9 +1,5 @@
 import { FC } from "react";
-import Image from "next/image";
 import { ReviewThese } from "@prisma/client";
-import doubleright from "../pages/images/right.png";
-import Divider from "./Divider";
-import Vori from "../pages/images/vori.jpg";
 
 type Props = {
   companies: ReviewThese[];
@@ -11,36 +7,31 @@ type Props = {
 
 const ReviewCompanies: FC<Props> = ({ companies }) => {
   return (
-    <div className="rounded-xl text-black w-full">
-      <div className="flex justify-center pt-3 med:pt-0">
-        <div className="flex flex-col bg-slate-100 w-full px-3 rounded-lg">
-          <div className="flex flex-row justify-between items-center py-3 px-3">
-            <h2 className="text-2xl">Review Companies</h2>
-          </div>
-          <Divider />
-          <div></div>
-          {companies?.map((reviewCompany, index) => {
-            return (
-              <div
-                className="flex flex-row justify-between px-3 py-5 text-xl"
-                key={index}
-              >
-                <a href={reviewCompany.url} className="cursor-pointer">
-                  <div className="hover:underline cursor-pointer">
-                    {reviewCompany.companyName}
-                  </div>
+    <div className="rounded-xl text-black w-full h-full bg-gray-50 py-3 px-6">
+      <h2 className="text-xl font-semibold mb-5">Recommended</h2>
+      <div className="grid grid-cols-3 gap-5">
+        {companies?.map((company, index) => {
+          return (
+            <>
+              <div key={`name-${index}`}>
+                <a href={company.url}>
+                  <h5 className="hover:underline cursor-pointer font-semibold text-gray-700">{company.companyName}</h5>
                 </a>
-
-                <div>{reviewCompany.industry}</div>
-                <div>
-                  <a href={reviewCompany.url} className="cursor-pointer">
-                    <Image src={doubleright} alt="" width={30} height={30} />
-                  </a>
-                </div>
+              </div >
+              <div key={`industry-${index}`}>{company.industry}</div>
+              <div key={`url-${index}`} className="flex ml-auto">
+                <a href={company.url}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                    <path d="M10 14l10 -10"></path>
+                    <path d="M15 4l5 0l0 5"></path>
+                  </svg>
+                </a>
               </div>
-            );
-          })}
-        </div>
+            </>
+          );
+        })}
       </div>
     </div>
   );

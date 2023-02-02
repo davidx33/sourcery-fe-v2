@@ -6,7 +6,6 @@ import linkedin from "../pages/images/linkedin.png";
 import { Submission } from "@prisma/client";
 import email from "../pages/images/mail.png";
 import square from "../pages/images/window_square.png";
-import expand from "../pages/images/expand.png";
 
 type Props = {
   submissions: Submission[];
@@ -15,12 +14,10 @@ type Props = {
 const MyCompanies: FC<Props> = ({ submissions }) => {
   const [collapsed, setCollapsed] = useState(false);
   return (
-    <div className="px-10 py-5 bg-slate-100 rounded-xl mb-5">
+    <div className="px-10 py-5 bg-gray-50 rounded-xl mb-5 h-full">
       <div className="flex flex-col md:flex-row md:justify-between mb-5 med:pb-0">
         <div className="flex flex-row items-center">
-          <h1 className="text-black text-2xl text-center md:text-left">
-            My Companies
-          </h1>
+          <h1 className="text-black text-2xl text-center">My Companies</h1>
           <div className="px-3 cursor-pointer py-3">
             <Image
               src={square}
@@ -152,7 +149,6 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
                   {collapsed && (
                     <td className="cursor-pointer px-4 py-4">
                       {/* @ts-ignore */}
-
                       <div>{submission.additionalNotes}</div>
                     </td>
                   )}
