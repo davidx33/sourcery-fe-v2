@@ -17,7 +17,7 @@ const ProfileHeader: NextPage = () => {
   if (session) {
     content = (
       <div className="flex flex-col w-full">
-        <div className="flex flex-row justify-between items-center bg-slate-100 rounded-xl ">
+        <div className="flex flex-col md:flex-row justify-between items-center bg-slate-100 rounded-xl ">
           <div className="flex flex-row py-5 items-center pl-10">
             <Image
               className="w-20 h-20 ring-2 ring-gray-300 rounded-lg"
@@ -26,14 +26,14 @@ const ProfileHeader: NextPage = () => {
               height={20}
               width={20}
             />
-            <div className="flex flex-col pl-0">
+            <div className="flex flex-col md:pl-0 pl-4">
               <div className="md:pl-8">
                 <h1 className="text-sm pb-2">{session.user?.name}</h1>
                 <h2 className="text-sm pb-2">{session.user?.email}</h2>
               </div>
             </div>
           </div>
-          <div className="flex flex-row items-center">
+          <div className="flex flex-row items-center py-5">
             <div className="pr-8">
               <p className="text-sm">
                 <a href="mailto:thexudavid@gmail.com">Contact Sourcery HQ</a>

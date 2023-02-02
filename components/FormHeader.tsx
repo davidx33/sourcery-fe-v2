@@ -8,7 +8,7 @@ const FormHeader: FC = () => {
           Ready to start sourcing?
         </h1>
         <h2 className="flex justify-center text-gray-500 text-left text-md">
-          Enter your companies and any relevant information via the form below.
+          Enter your company and any relevant information via the form below.
         </h2>
       </div>
     </div>

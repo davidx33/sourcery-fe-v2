@@ -18,10 +18,19 @@ const ReviewCompanies: FC<Props> = ({ companies }) => {
             <h2 className="text-2xl">Review Companies</h2>
           </div>
           <Divider />
+          <div></div>
           {companies?.map((reviewCompany, index) => {
             return (
-              <div className="flex flex-row justify-evenly px-3 py-5 text-xl" key={index}>
-                <div>{reviewCompany.companyName}</div>
+              <div
+                className="flex flex-row justify-between px-3 py-5 text-xl"
+                key={index}
+              >
+                <a href={reviewCompany.url} className="cursor-pointer">
+                  <div className="hover:underline cursor-pointer">
+                    {reviewCompany.companyName}
+                  </div>
+                </a>
+
                 <div>{reviewCompany.industry}</div>
                 <div>
                   <a href={reviewCompany.url} className="cursor-pointer">

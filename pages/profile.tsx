@@ -78,11 +78,11 @@ const Profile: NextPage<Props> = ({ submissions, messages, reviewThese }) => {
       <ProfileHeader />
       <StatsDashboard submit={submissions} />
       <div className="flex flex-col">
-        <div className="flex flex-row">
-          <div className="w-1/2 pr-3">
+        <div className="flex flex-col md:flex-row">
+          <div className="md:w-1/2 pr-3">
             <ReviewCompanies companies={reviewThese} />
           </div>
-          <div className="w-1/2 pl-3">
+          <div className="md:w-1/2 pl-3">
             <MessageBoard messages={messages} />
           </div>
         </div>

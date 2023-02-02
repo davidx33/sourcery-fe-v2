@@ -18,14 +18,14 @@ const MessageBoard: FC<Props> = ({ messages }) => {
           {messages?.map((message, index) => {
             return (
               <div className="flex flex-row px-3 py-5">
-                <div className="flex flex-col items-center border border-gray-500 rounded-lg px-3 py-3">
+                <div className="flex flex-col justify-center items-center md:border border-gray-500 rounded-lg px-3 py-3">
                   <div className="text-slate-500 text-xl">
                     {message.sentMonth}
                   </div>
                   <div className="text-black text-2xl">{message.sentDate}</div>
                 </div>
                 <div className="flex flex-col pl-5">
-                  <div className="text-2xl  pb-2">{message.header}</div>
+                  <div className="text-2xl pb-2">{message.header}</div>
                   <div className="text-sm text-gray-500">{message.welcomeMessage}</div>
                 </div>
               </div>

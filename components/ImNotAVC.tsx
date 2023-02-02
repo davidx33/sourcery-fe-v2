@@ -14,7 +14,7 @@ const ImNotAVC: NextPage = () => {
       </h2>
       <div>
         <h2 className="md:w-1/3 w-full pt-3">
-          Get $5 for every 5 companies sourced, and $1,000 for every company our
+          Either source your own company our browse our list of recommended startups. Get $1,000 for every company our
           venture partners invest in.
         </h2>
       </div>
