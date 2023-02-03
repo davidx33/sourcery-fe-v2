@@ -1,7 +1,8 @@
 import React from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
-import sourcerdashboard from '../pages/images/sorcererdashboard.png'
+import sourcerdashboard from "../pages/images/sorcererdashboard.png";
+import userportal from "../pages/images/userportal.png";
 
 const ImNotAVC: NextPage = () => {
   return (
@@ -14,15 +15,15 @@ const ImNotAVC: NextPage = () => {
       </h2>
       <div>
         <h2 className="md:w-1/3 w-full pt-3">
-          Either source your own company our browse our list of recommended startups. Get $1,000 for every company our
-          venture partners invest in.
+          Keep track of any interesting startups you come across at work,
+          school, in the news, or from your network. Get $1,000 if our venture
+          partners invest.
         </h2>
       </div>
 
       <div className="flex justify-center pt-6">
-        <Image src={sourcerdashboard} width={800} height={800} alt=""/>
+        <Image src={userportal} width={800} height={800} alt="" />
       </div>
-
     </div>
   );
 };
