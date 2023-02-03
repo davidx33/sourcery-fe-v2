@@ -48,6 +48,8 @@ model User {
   sessions      Session[]
   Submission    Submission[]
   createdAt     DateTime     @default(now())
+  venmoUsername String?
+  contactEmail  String?
 }
 
 model VerificationToken {
@@ -105,10 +107,4 @@ model statsDashboard {
   totalComp              String
   percentileSourcers     String
   totalCompaniesReviewed String
-}
-
-model venmoInfo {
-  id                     String @id @default(cuid())
-  bestEmail              String
-  venmoUsername          String
 }

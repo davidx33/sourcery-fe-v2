@@ -5,20 +5,19 @@ import FormInput from "./FormInput";
 
 const VenmoForm: FC = () => {
   const router = useRouter();
-  const [bestEmail, setBestEmail] = useState<string>("");
+  const [contactEmail, setContactEmail] = useState<string>("");
   const [venmoUsername, setVenmoUsername] = useState<string>("");
-
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    await fetch("/api/company", {
+    await fetch("/api/venmo", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        bestEmail: bestEmail,
+        contactEmail: contactEmail,
         venmoUsername: venmoUsername
       }),
     });
@@ -31,17 +30,17 @@ const VenmoForm: FC = () => {
           <div className="grid md:grid-cols-3 md:gap-6">
             <div className="relative z-0 w-full mb-6 group">
               <FormInput
-                label="Your best email"
-                setState={setBestEmail}
-                inputName="company_name"
-                state={bestEmail}
+                label="Best email to contact you"
+                setState={setContactEmail}
+                inputName="contact_email"
+                state={contactEmail}
               />
             </div>
             <div className="relative z-0 w-full mb-6 group">
               <FormInput
                 label="Venmo username"
                 setState={setVenmoUsername}
-                inputName="company_url"
+                inputName="venmo_username"
                 state={venmoUsername}
               />
             </div>
