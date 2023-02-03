@@ -7,7 +7,7 @@ type Props = {
 
 const MessageBoard: FC<Props> = ({ messages }) => {
   return (
-    <div className="rounded-xl text-black w-full h-full bg-gray-50">
+    <div className="rounded-xl text-black w-full h-full bg-white">
       <div className="flex flex-col w-full px-3 rounded-lg">
         <div className="flex flex-row justify-between items-center py-3 px-3">
           <h2 className="text-xl font-semibold">Messages</h2>

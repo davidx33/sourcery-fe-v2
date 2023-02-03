@@ -9,7 +9,7 @@ type Props = {
 const Layout = ({ children }: Props) => {
     return (
         <>
-            <div className="bg-white">
+            <div className="bg-slate-100">
                 <div className="min-h-screen">
                     <Navbar />
                     <div className="md:px-16 px-8">

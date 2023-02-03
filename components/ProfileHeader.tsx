@@ -1,12 +1,9 @@
-import React from "react";
 import Link from "next/link";
 import { FC } from "react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
-import { User } from "@prisma/client";
-import { NextPage } from "next";
 
-const ProfileHeader: NextPage = () => {
+const ProfileHeader: FC = () => {
   const { data: session, status } = useSession();
 
   if (!session) {
@@ -14,7 +11,8 @@ const ProfileHeader: NextPage = () => {
   }
 
   return (
-    <div className="rounded-xl bg-gray-50 py-10 h-full">
+    <div className="rounded-xl bg-white py-3 px-6 h-full">
+      <h2 className="text-xl font-semibold mb-5">My Profile</h2>
       <Image
         className="w-20 h-20 ring-4 ring-indigo-500 rounded-full mx-auto mb-4"
         src={session.user?.image as string}
@@ -22,21 +20,19 @@ const ProfileHeader: NextPage = () => {
         height={90}
         width={90}
       />
-      <h3 className="text-center font-semibold text-gray-700 text-xl">
+      <h3 className="text-center font-semibold text-gray-700">
         {session.user?.name}
       </h3>
-      <h3 className="pb-2 text-center font-semibold text-gray-500">
+      <h3 className="pb-2 text-center font-semibold text-gray-400 text-sm">
         {session.user?.email}
       </h3>
-
       <div className="flex justify-center">
-        <Link href="/payments" className="flex text-gray-700 underline">
-          Edit payment details
+        <Link href="/payments" className="px-6 py-2.5 mr-2 mb-2 border rounded-lg flex font-medium text-sm">
+          Edit payout method
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="ml-2 text-gray-500"
-            width="24"
-            height="24"
+            className="ml-2 text-gray-600"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             strokeWidth="2"
             stroke="currentColor"
