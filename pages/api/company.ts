@@ -27,7 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     return res.status(403).send({ error: 'please authenticate to access this view' });
   }
   if (req.method === 'POST' && session?.user?.email) {
-    const { companyName, companySector, companyURL, foundingTeamQualification, proprietary, missionCritical, relevantExperience, additonalNotes, pocEmail, pocLinkedin, bestEmail, venmoUsername } = req.body;
+    const { companyName, companySector, companyURL, foundingTeamQualification, proprietary, missionCritical, relevantExperience, additionalNotes, pocEmail, pocLinkedin, bestEmail, venmoUsername } = req.body;
     const company = await prisma.company.create({
       data: {
         name: companyName,
@@ -43,7 +43,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         proprietary: proprietary,
         missionCritical: missionCritical,
         relevantExperience: relevantExperience,
-        additionalNotes: additonalNotes,
+        additionalNotes: additionalNotes,
         pocEmail: pocEmail,
         pocLinkedin: pocLinkedin
       }
@@ -63,7 +63,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       proprietary: proprietary,
       missionCritical: missionCritical,
       relevantExperience: relevantExperience,
-      additionalNotes: additonalNotes,
+      additionalNotes: additionalNotes,
       pocEmail: pocEmail,
       pocLinkedin: pocLinkedin,
       bestEmail: bestEmail,
