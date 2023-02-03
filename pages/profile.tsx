@@ -2,16 +2,14 @@ import { GetServerSideProps } from "next";
 import type { NextPage } from "next";
 import Head from "next/head";
 import prisma from "../lib/prisma";
-import { Submission } from "@prisma/client";
-import { Message } from "@prisma/client";
-import { ReviewThese } from "@prisma/client";
+import { Message, ReviewThese, Submission } from "@prisma/client";
 import { getSession, useSession } from "next-auth/react";
 import ProfileHeader from "../components/ProfileHeader";
 import MessageBoard from "../components/MessageBoard";
 import MyCompanies from "../components/MyCompanies";
 import Layout from "../components/Layout";
-import StatsDashboard from "../components/StatsDashboard";
 import ReviewCompanies from "../components/ReviewCompanies";
+import UserStatistics from "../components/UserStatistics";
 
 type Props = {
   submissions: Submission[];
@@ -37,12 +35,12 @@ const Profile: NextPage<Props> = ({ submissions, messages, reviewThese }) => {
         <title>Profile</title>
         <meta name="description" content="Find companies. Make money." />
       </Head>
-      <h1 className="md:text-3xl text-xl mb-5 font-semibold text-left">
-        Welcome back, {session.user?.name}.
+      <h1 className="text-xl md:text-4xl my-5">
+        Welcome back, <strong>{session.user?.name}.</strong>
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="md:col-span-3">
-          <StatsDashboard submissions={submissions} />
+          <UserStatistics submissions={submissions} />
         </div>
         <div className="md:col-span-1">
           <ProfileHeader />
