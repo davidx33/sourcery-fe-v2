@@ -54,11 +54,11 @@ const MyCompanies: FC<Props> = ({ submissions }) => {
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg ">
         <table className="w-full text-sm text-left">
           <thead className="text-xs text-black uppercase bg-white">
-            <tr>
+            <tr className="">
               <th scope="col" className="px-3 py-3">
                 Company Name
               </th>
-              <th scope="col" className="px-3 py-3">
+              <th scope="col" className=" px-3 py-3">
                 Industry
               </th>
 

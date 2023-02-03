@@ -4,6 +4,7 @@ import FormHorizontalRadio from "./FormHorizontalRadio";
 import FormInput from "./FormInput";
 import FormSelect from "./FormSelect";
 import FormTextArea from "./FormTextArea";
+import Link from "next/link";
 
 const companySectors = [
   "Healthcare",
@@ -173,12 +174,17 @@ const FormBody: FC = () => {
             />
           </div>
         </form>
-        <button
-          onClick={handleSubmit}
-          className="text-black border-2  border-solid px-5 py-2 rounded-full hover:bg-white hover:border-black"
-        >
-          Submit Company
-        </button>
+        
+          <button
+            onClick={handleSubmit}
+            className="text-black border-2  border-solid px-5 py-2 rounded-full hover:bg-white hover:border-black"
+          >
+            <Link href="/profile">
+            Submit Company
+            </Link>
+            
+          </button>
+        
       </div>
     </div>
   );

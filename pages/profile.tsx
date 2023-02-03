@@ -13,7 +13,6 @@ import Layout from "../components/Layout";
 import StatsDashboard from "../components/StatsDashboard";
 import ReviewCompanies from "../components/ReviewCompanies";
 
-
 type Props = {
   submissions: Submission[];
   messages: Message[];
@@ -26,7 +25,9 @@ const Profile: NextPage<Props> = ({ submissions, messages, reviewThese }) => {
   if (!session) {
     return (
       <Layout>
-        <h1 className="text-center font-semibold text-3xl">Loading Profile...</h1>
+        <h1 className="text-center font-semibold text-3xl">
+          Loading Profile...
+        </h1>
       </Layout>
     );
   }
@@ -36,7 +37,9 @@ const Profile: NextPage<Props> = ({ submissions, messages, reviewThese }) => {
         <title>Profile</title>
         <meta name="description" content="Find companies. Make money." />
       </Head>
-      <h1 className="md:text-3xl text-xl mb-5 font-semibold text-left">Welcome back, {session.user?.name}.</h1>
+      <h1 className="md:text-3xl text-xl mb-5 font-semibold text-left">
+        Welcome back, {session.user?.name}.
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="md:col-span-3">
           <StatsDashboard submissions={submissions} />

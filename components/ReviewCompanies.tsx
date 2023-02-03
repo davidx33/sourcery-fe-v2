@@ -19,7 +19,7 @@ const ReviewCompanies: FC<Props> = ({ companies }) => {
                 </a>
               </div >
               <div key={`industry-${index}`}>{company.industry}</div>
-              <div key={`url-${index}`} className="flex ml-auto">
+              <div key={`url-${index}`} className="flex ml-auto pr-10">
                 <a href={company.url}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>

@@ -34,7 +34,7 @@ const Viability: FC = () => {
           </h2>
         </div>
         <div className="pt-10">
-          <a href="mailto:sourceryinfo@gmail.com">
+          <a href="https://calendly.com/sourceryinfo/15min">
             <button className="text-black border-2  border-solid px-5 py-2 rounded-full hover:bg-white hover:border-black">
               Learn more
             </button>
