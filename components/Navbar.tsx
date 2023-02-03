@@ -33,7 +33,7 @@ const Navbar: NextPage = () => {
 
   if (session) {
     content = (
-      <>
+      <div className="flex flex-col md:flex-row items-center">
         <h3 className="font-semibold underline">
           <Link href="/profile">{session.user?.name}</Link>
         </h3>
@@ -45,7 +45,7 @@ const Navbar: NextPage = () => {
             Sign Out
           </a>
         </button>
-      </>
+      </div>
     );
   }
 
