@@ -9,7 +9,7 @@ const ReviewCompanies: FC<Props> = ({ companies }) => {
   return (
     <div className="rounded-xl text-black w-full h-full bg-gray-50 py-3 px-6">
       <h2 className="text-xl font-semibold mb-5">Recommended</h2>
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-cols-3 gap-5 pt-2">
         {companies?.map((company, index) => {
           return (
             <>

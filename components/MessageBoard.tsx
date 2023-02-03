@@ -14,7 +14,7 @@ const MessageBoard: FC<Props> = ({ messages }) => {
         </div>
         {messages?.map((message, index) => {
           return (
-            <div className="flex flex-row px-3 py-5">
+            <div className="flex flex-row px-3 py-3">
               <div className="flex flex-col justify-center items-center rounded-lg px-1 py-1">
                 <div className="text-slate-500 text-xl">
                   {message.sentMonth}
