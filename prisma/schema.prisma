@@ -108,3 +108,4 @@ model statsDashboard {
   percentileSourcers     String
   totalCompaniesReviewed String
 }
+

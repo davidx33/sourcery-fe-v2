@@ -5,6 +5,7 @@ import VCorNot from "../components/VCorNot";
 import Interested from "../components/Interested";
 import Footer from "../components/Footer";
 import Head from "next/head";
+import * as React from "react";
 
 // David TODO: wrap everything component in layout.tsx
 const Home: NextPage = () => {
@@ -12,11 +13,9 @@ const Home: NextPage = () => {
     <div className="scroll-smooth">
       <Head>
         <title>Sourcery</title>
-        <meta
-          name="description"
-          content="Find companies. Make money."
-        />
+        <meta name="description" content="Find companies. Make money." />
       </Head>
+
       <Navbar />
       <Hero />
       <VCorNot />
