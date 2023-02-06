@@ -26,7 +26,7 @@ import zepto from "../pages/images/zepto.jpg";
 
 const Hero: NextPage = () => {
   return (
-    <div className= "flex md:flex-row flex-col bg-slate-100 text-left py-28 justify-between px-20 items-center" >
+    <div className= "flex md:flex-row flex-col bg-slate-100 text-left py-24 justify-between px-20 items-center" >
       <div className="flex flex-col md:w-2/4 md:pr-0">
         <div>
           <h2 className="text-left text-5xl md:text-8xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-500 bg-clip-text text-transparent">
