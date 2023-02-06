@@ -19,7 +19,20 @@ export default NextAuth({
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) { return true },
     async redirect({ url, baseUrl }) { return baseUrl },
-    async session({ session, token, user }) { return session },
+    async session({ session, token, user }) {
+      if (session.user) {
+        const prismaUser = await prisma.user.findUnique({
+          where: {
+            email: session.user.email as string
+          }
+        })
+        if (prismaUser) {
+          // @ts-ignore: bug where types don't match from prisma schema
+          session.user.airtableViewId = prismaUser.airtableViewId as string;
+        }
+      }
+      return session
+    },
     async jwt({ token, user, account, profile, isNewUser }) { return token }
   },
 });

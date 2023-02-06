@@ -4,9 +4,9 @@ import Head from "next/head";
 import prisma from "../lib/prisma";
 import { Message, ReviewThese, Submission } from "@prisma/client";
 import { getSession, useSession } from "next-auth/react";
+import ConnectAirtable from "../components/ConnectAirtable";
 import ProfileHeader from "../components/ProfileHeader";
 import MessageBoard from "../components/MessageBoard";
-import MyCompanies from "../components/MyCompanies";
 import Layout from "../components/Layout";
 import ReviewCompanies from "../components/ReviewCompanies";
 import UserStatistics from "../components/UserStatistics";
@@ -52,7 +52,7 @@ const Profile: NextPage<Props> = ({ submissions, messages, reviewThese }) => {
           <MessageBoard messages={messages} />
         </div>
         <div className="md:col-span-3">
-          <MyCompanies submissions={submissions} />
+          <ConnectAirtable />
         </div>
       </div>
     </Layout>

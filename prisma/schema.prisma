@@ -39,17 +39,18 @@ model Session {
 }
 
 model User {
-  id            String       @id @default(cuid())
-  name          String?
-  email         String?      @unique
-  emailVerified DateTime?
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
-  Submission    Submission[]
-  createdAt     DateTime     @default(now())
-  venmoUsername String?
-  contactEmail  String?
+  id             String       @id @default(cuid())
+  name           String?
+  email          String?      @unique
+  emailVerified  DateTime?
+  image          String?
+  accounts       Account[]
+  sessions       Session[]
+  Submission     Submission[]
+  createdAt      DateTime     @default(now())
+  venmoUsername  String?
+  contactEmail   String?
+  airtableViewId String?
 }
 
 model VerificationToken {
@@ -108,4 +109,3 @@ model statsDashboard {
   percentileSourcers     String
   totalCompaniesReviewed String
 }
-
