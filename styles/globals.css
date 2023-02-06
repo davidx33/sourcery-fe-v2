@@ -12,3 +12,10 @@
     @apply scroll-smooth;
   }
 }
+
+.bg-polka {
+  background-color: #e5e5f7;
+  opacity: 1;
+  background-image: radial-gradient(#444cf7 1.4000000000000001px, #e5e5f7 1.4000000000000001px);
+  background-size: 28px 28px;
+}

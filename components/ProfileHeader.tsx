@@ -5,7 +5,7 @@ import Image from "next/image";
 import { NextPage } from "next";
 
 const ProfileHeader: NextPage = () => {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
 
   if (!session) {
     return <></>;
@@ -13,13 +13,15 @@ const ProfileHeader: NextPage = () => {
 
   return (
     <div className="rounded-xl bg-gray-50 py-10 h-full">
-      <Image
-        className="w-20 h-20 ring-4 ring-indigo-500 rounded-full mx-auto mb-4"
-        src={session.user?.image as string}
-        alt="Profile picture"
-        height={90}
-        width={90}
-      />
+      {session.user?.image &&
+        <Image
+          className="w-20 h-20 ring-4 ring-indigo-500 rounded-full mx-auto mb-4"
+          src={session.user?.image as string}
+          alt="Profile picture"
+          height={90}
+          width={90}
+        />
+      }
       <h3 className="text-center font-semibold text-gray-700 text-xl">
         {session.user?.name}
       </h3>
