@@ -20,13 +20,12 @@ const Navbar: NextPage = () => {
     content = (
       <>
         <SignUpButton />
-
-        <button
-          onClick={() => signIn("Google", { callbackUrl: "/profile" })}
+        <Link
+          href="/auth/signin/"
           className="md:px-5 pl-2 py-2 font-semibold"
         >
           Log in
-        </button>
+        </Link>
       </>
     );
   }
