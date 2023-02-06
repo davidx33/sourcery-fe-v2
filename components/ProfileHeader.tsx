@@ -12,15 +12,18 @@ const ProfileHeader: NextPage = () => {
   }
 
   return (
-    <div className="rounded-xl bg-gray-50 py-10 h-full">
-      {session.user?.image &&
-        <Image
+    <div className="rounded-xl bg-white py-10 h-full">
+      {session.user?.image
+        ? <Image
           className="w-20 h-20 ring-4 ring-indigo-500 rounded-full mx-auto mb-4"
           src={session.user?.image as string}
           alt="Profile picture"
           height={90}
           width={90}
         />
+        : <div className="flex justify-center">
+          <div className="mb-3 font-semibold text-3xl bg-indigo-100 text-gray-600 w-20 h-20 rounded-full ring-4 ring-indigo-500 flex justify-center items-center">{session.user?.name?.split(' ')[0][0]}{session.user?.name?.split(' ')[1][0]}</div>
+        </div>
       }
       <h3 className="text-center font-semibold text-gray-700 text-xl">
         {session.user?.name}
