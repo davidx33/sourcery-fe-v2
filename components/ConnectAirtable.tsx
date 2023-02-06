@@ -18,27 +18,31 @@ const ConnectAirtable: FC = () => {
         <div className="rounded-xl bg-white px-6 pt-6 h-[30rem]">
             <div className="flex">
                 <h2 className="text-xl font-semibold mr-auto">Your Deal Flow</h2>
-                <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={`https://airtable.com/${airtableViewId}`}
-                    className="px-5 py-2.5 mr-2 mb-2 border rounded-lg flex font-medium text-sm justify-center"
-                >
-                    Open in new tab
-                    <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 text-gray-600" width="20" height="20" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                        <path d="M10 14l10 -10"></path>
-                        <path d="M15 4l5 0l0 5"></path>
-                    </svg>
-                </a>
+                {airtableViewId &&
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={`https://airtable.com/${airtableViewId}`}
+                        className="px-5 py-2.5 mr-2 mb-2 border rounded-lg flex font-medium text-sm justify-center"
+                    >
+                        Open in new tab
+                        <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 text-gray-600" width="20" height="20" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                            <path d="M10 14l10 -10"></path>
+                            <path d="M15 4l5 0l0 5"></path>
+                        </svg>
+                    </a>
+                }
                 <button onClick={() => setShowConnectAirtableModal(true)} data-modal-target="connect-airtable-modal" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" type="button">
                     Connect Airtable
                 </button>
             </div>
             {airtableViewId
                 ? <AirtableEmbed viewId={airtableViewId} />
-                : <h1 className="text-2xl text-center text-gray-500 mt-5">Please connect your Airtable.</h1>
+                : <div className="flex h-3/5 items-center justify-center">
+                    <h1 className="text-2xl text-gray-500">Please connect your Airtable.</h1>
+                </div>
             }
             {/* Connect Airtable Modal */}
             <div id="connect-airtable-modal" tabIndex={-1} aria-hidden="true" className={(showConnectAirtableModal ? "" : "hidden ") + "fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full flex justify-center items-center backdrop-blur-md"}>
@@ -49,13 +53,14 @@ const ConnectAirtable: FC = () => {
                             <span className="sr-only">Close modal</span>
                         </button>
                         <div className="px-6 py-6 lg:px-8">
-                            <h3 className="mb-4 text-xl font-medium text-gray-900">Connect Your Airtable</h3>
+                            <h3 className="mb-4 text-xl font-medium text-gray-900">Connect Airtable With Shared View ID</h3>
                             <div className="mb-4">
-                                <p className="text-sm text-gray-500 mb-2">Where do I find my view ID?</p>
+                                <p className="text-sm text-gray-500 mb-2">Where do I find my shared view ID?</p>
                                 <p className="text-sm text-gray-500 mb-2">1. Go to <a className="underline" href="https://airtable.com/">airtable.com</a> and open the workspace containing your tables</p>
                                 <p className="text-sm text-gray-500 mb-2">2. Open the table containing your deal flow</p>
-                                <p className="text-sm text-gray-500 mb-2">3. Click "Share view"</p>
-                                <p className="text-sm text-gray-500 mb-2">4. Copy-paste the view ID from the URL: https://airtable.com/[view ID here]</p>
+                                <p className="text-sm text-gray-500 mb-2">3. Click the "Share view" button in the toolbar (next to the sort and color tools)</p>
+                                <p className="text-sm text-gray-500 mb-2">4. Click the "Create a shareable grid view link"</p>
+                                <p className="text-sm text-gray-500 mb-2">5. Copy-paste the shared view ID from the URL: https://airtable.com/<strong>[Shared View ID Here]</strong></p>
                             </div>
                             <form className="space-y-6" action="/api/airtable" method="post">
                                 <div>
