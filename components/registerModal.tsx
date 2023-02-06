@@ -23,6 +23,9 @@ const RegisterModal: FC = () => {
                     password: body.password,
                     callbackUrl: 'profile',
                 });
+            } else {
+                setError("Error creating an account. Try again with a different email.");
+                return;
             }
         })
     }
