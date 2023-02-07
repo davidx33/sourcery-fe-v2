@@ -1,15 +1,16 @@
 import { FC } from "react";
 
 type Props = {
-  viewId: string;
+  sheetsEmbed: string;
+  
 };
 
-const AirtableEmbed: FC<Props> = ({ viewId }) => {
+const GoogleSheetsEmbed: FC<Props> = ({ sheetsEmbed }) => {
   return (
     <>
       <iframe
         className="h-5/6"
-        src={`https://airtable.com/embed/${viewId}?backgroundColor=blue&viewControls=on`}
+        src={sheetsEmbed}
         width="100%"
         style={{ background: "transparent", border: "1px solid #ccc" }}
       ></iframe>
@@ -17,4 +18,4 @@ const AirtableEmbed: FC<Props> = ({ viewId }) => {
   );
 };
 
-export default AirtableEmbed;
+export default GoogleSheetsEmbed;

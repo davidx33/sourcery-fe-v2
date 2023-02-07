@@ -52,6 +52,7 @@ model User {
   venmoUsername  String?
   contactEmail   String?
   airtableViewId String?
+  sheetsEmbed    String?
 }
 
 model VerificationToken {

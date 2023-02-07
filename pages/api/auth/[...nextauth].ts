@@ -76,6 +76,10 @@ export default NextAuth({
 				if (prismaUser) {
 					// @ts-ignore: bug where types don't match from prisma schema
 					session.user.airtableViewId = prismaUser.airtableViewId as string;
+					// @ts-ignore: bug where types don't match from prisma schema
+					session.user.sheetsEmbed = prismaUser.sheetsEmbed as string;
+
+					
 				}
 			}
 			return session
