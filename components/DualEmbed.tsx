@@ -93,17 +93,15 @@ const DualEmbed: FC = () => {
             </button>
           )}
 
-          {!airtableViewId && !sheetsEmbed && (
-            <Link href="/template">
-              <button
-                data-modal-target="get-started-with-template-modal"
-                className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
-                type="button"
-              >
-                Get started with a template
-              </button>
-            </Link>
-          )}
+          <Link href="/template">
+            <button
+              data-modal-target="get-started-with-template-modal"
+              className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
+              type="button"
+            >
+              Get started with a template
+            </button>
+          </Link>
         </div>
         {airtableViewId && showAirtable ? (
           <AirtableEmbed viewId={airtableViewId} />
@@ -266,13 +264,15 @@ const DualEmbed: FC = () => {
                   and open the spreadsheet containing your dealflow
                 </p>
                 <p className="text-sm text-gray-500 mb-2">
-                  2. Click the "File" tab in the top left corner and hover over the "Share" button.
+                  2. Click the "File" tab in the top left corner and hover over
+                  the "Share" button.
                 </p>
                 <p className="text-sm text-gray-500 mb-2">
                   3. Click "Publish to Web"
                 </p>
                 <p className="text-sm text-gray-500 mb-2">
-                  4. With "Link" toggled (Link should have a blue underline), click the green publish button in the bottom left corner
+                  4. With "Link" toggled (Link should have a blue underline),
+                  click the green publish button in the bottom left corner
                 </p>
                 <p className="text-sm text-gray-500 mb-2">
                   5. Copy the URL in the textbox below the "Entire Document" and
