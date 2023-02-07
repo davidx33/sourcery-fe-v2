@@ -12,7 +12,7 @@ const Layout = ({ children }: Props) => {
             <div className="bg-slate-100">
                 <div className="min-h-screen">
                     <Navbar />
-                    <div className="md:px-16 px-8">
+                    <div className="px-10 md:px-20">
                         <main>{children}</main>
                     </div>
                 </div>
