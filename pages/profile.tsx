@@ -12,6 +12,7 @@ import Layout from "../components/Layout";
 import ReviewCompanies from "../components/ReviewCompanies";
 import UserStatistics from "../components/UserStatistics";
 import ConnectSheets from "../components/ConnectSheets";
+import DualEmbed from "../components/DualEmbed";
 
 type Props = {
   submissions: Submission[];
@@ -21,7 +22,6 @@ type Props = {
 
 const Profile: NextPage<Props> = ({ submissions, messages, reviewThese }) => {
   const { data: session, status } = useSession();
-  const [isAirtable, setIsAirtable] = useState(true);
 
   if (!session) {
     return (
@@ -54,39 +54,9 @@ const Profile: NextPage<Props> = ({ submissions, messages, reviewThese }) => {
         <div className="md:col-span-1">
           <MessageBoard messages={messages} />
         </div>
-        <div className="flex flex-row">
-          <div className="pr-3">
-            <button
-              className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
-              type="button"
-              onClick={() => {
-                setIsAirtable(true)
-              }}
-            >
-              Airtable
-            </button>
-          </div>
-          <div className="pl-3">
-            <button
-              className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
-              type="button"
-              onClick={() => {
-                setIsAirtable(false)
-              }}
-            >
-              Google Sheets
-            </button>
-          </div>
+        <div className="md:col-span-3">
+          <DualEmbed />
         </div>
-        {isAirtable ? (
-          <div className="md:col-span-3">
-            <ConnectAirtable />
-          </div>
-        ) : (
-          <div className="md:col-span-3">
-            <ConnectSheets />
-          </div>
-        )}
       </div>
     </Layout>
   );

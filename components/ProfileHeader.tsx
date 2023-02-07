@@ -54,8 +54,8 @@ const ProfileHeader: NextPage = () => {
             <path d="M11 15l2 0"></path>
           </svg>
         </Link>
-        {/* <Link href="/payments" className="flex text-gray-700 underline pt-3">
-          Contact Sourcery HQ
+        <Link href="/viability" className="flex text-gray-700 underline pt-3">
+          Rewards for sourcing
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="ml-2 text-gray-500"
@@ -73,7 +73,7 @@ const ProfileHeader: NextPage = () => {
             <path d="M12 17l0 .01"></path>
             <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path>
           </svg>
-        </Link> */}
+        </Link>
       </div>
     </div>
   );
