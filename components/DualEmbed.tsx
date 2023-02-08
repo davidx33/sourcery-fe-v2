@@ -10,7 +10,6 @@ const DualEmbed: FC = () => {
     useState(false);
   const [showConnectSheetsModal, setShowConnectSheetsModal] = useState(false);
   const [showAirtable, setShowAirtable] = useState(true);
-  const [showGoogleSheets, setShowGoogleSheets] = useState(false);
   let airtableViewId;
   let sheetsEmbed;
 
