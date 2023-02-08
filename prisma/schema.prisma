@@ -39,20 +39,22 @@ model Session {
 }
 
 model User {
-  id             String       @id @default(cuid())
-  name           String?
-  email          String?      @unique
-  emailVerified  DateTime?
-  image          String?
-  password       String?
-  accounts       Account[]
-  sessions       Session[]
-  Submission     Submission[]
-  createdAt      DateTime     @default(now())
-  venmoUsername  String?
-  contactEmail   String?
-  airtableViewId String?
-  sheetsEmbed    String?
+  id              String            @id @default(cuid())
+  name            String?
+  email           String?           @unique
+  emailVerified   DateTime?
+  image           String?
+  password        String?
+  accounts        Account[]
+  sessions        Session[]
+  Submission      Submission[]
+  createdAt       DateTime          @default(now())
+  venmoUsername   String?
+  contactEmail    String?
+  airtableViewId  String?
+  sheetsEmbed     String?
+  GoogleSheetsIds GoogleSheetsIds[]
+  AirtableViewIds AirtableViewIds[]
 }
 
 model VerificationToken {
@@ -117,4 +119,20 @@ model statsDashboard {
   totalComp              String
   percentileSourcers     String
   totalCompaniesReviewed String
+}
+
+model GoogleSheetsIds {
+  id          String @id @default(cuid())
+  googleEmbed String
+  user        User   @relation(fields: [userId], references: [id])
+  userId      String
+  sheetName   String
+}
+
+model AirtableViewIds {
+  id            String @id @default(cuid())
+  user          User   @relation(fields: [userId], references: [id])
+  userId        String
+  airtableEmbed String
+  tabName       String
 }
