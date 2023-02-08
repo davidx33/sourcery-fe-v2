@@ -11,14 +11,30 @@ const Viability: FC = () => {
         </h1>
         <div className="flex justify-center flex-col pt-10">
           <h1 className="flex justify-left text-3xl text-black rounded-xl pb-8">
+            How It Works
+          </h1>
+          <Divider />
+          <h2 className="flex justify-center text-gray-500 text-left text-md pt-6">
+            Sourcery is a platform that provides cash and venture capital
+            interviews to users for sourcing startups (finding cool new
+            companies and writing what you think about them). To get started, go
+            to the Your Deal Flow box and upload the CRM (Airtable or Google
+            Sheets) that you currently use for sourcing. If you are new to
+            sourcing, click Get started with a template. If there is an
+            integration you want to see besides Airtable and Google Sheets, or
+            you have any questions, we would love to hear from you. Contact us
+            via the button below.
+          </h2>
+        </div>
+        <div className="flex justify-center flex-col pt-10">
+          <h1 className="flex justify-left text-3xl text-black rounded-xl pb-8">
             Viability Criteria
           </h1>
           <Divider />
           <h2 className="flex justify-center text-gray-500 text-left text-md pt-6">
-            Make sure your entries are viable to be considered for investment by
-            our venture partners. This means for-profit startups with less than
-            50 LinkedIn employees and that every category on the submission form
-            is correctly completed.
+            Make sure the companies you source are viable to be considered for
+            investment by our venture partners. Our criteria for "viable" is simple:
+            for-profit startups with less than 50 LinkedIn employees.
           </h2>
         </div>
         <div className="flex justify-center flex-col pt-16">
@@ -27,16 +43,15 @@ const Viability: FC = () => {
           </h1>
           <Divider />
           <h2 className="flex justify-center text-gray-500 text-left text-md pt-3">
-            The incentive structure for viable entries includes $1,000 if one of
-            our venture partners invests in your submission. Additionally, the
-            top 3% of users are referred to our venture partners for interview
-            opportunities.
+            You will receive $1,000 if one of our VCs invests in a startup you
+            submit. Additionally, the top 3% of users are referred to our
+            venture partners for interview opportunities.
           </h2>
         </div>
         <div className="pt-10">
           <a href="https://calendly.com/sourceryinfo/15min">
             <button className="text-black border-2  border-solid px-5 py-2 rounded-full hover:bg-white hover:border-black">
-              Learn more
+              Contact Us
             </button>
           </a>
         </div>

@@ -6,15 +6,18 @@ import Link from "next/link";
 
 const DualEmbed: FC = () => {
   const { data: session } = useSession();
-  const [showConnectAirtableModal, setShowConnectAirtableModal] = useState(false);
+  const [showConnectAirtableModal, setShowConnectAirtableModal] =
+    useState(false);
   const [showConnectSheetsModal, setShowConnectSheetsModal] = useState(false);
-  const [showAirtable, setShowAirtable] = useState("default");
+  const [showAirtable, setShowAirtable] = useState(true);
+  const [showGoogleSheets, setShowGoogleSheets] = useState(false);
   let airtableViewId;
   let sheetsEmbed;
 
   if (!session) {
     return <></>;
   }
+
   // @ts-ignore: bug where types don't match from prisma schema
   airtableViewId = session?.user?.airtableViewId;
 
@@ -22,10 +25,10 @@ const DualEmbed: FC = () => {
   sheetsEmbed = session?.user?.sheetsEmbed;
 
   return (
-    <div>
+    <div className="py-6">
       {airtableViewId && (
         <button
-          onClick={() => setShowAirtable("true")}
+          onClick={() => setShowAirtable(true)}
           data-modal-target="connect-sheets-modal"
           className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2 mr-2 "
           type="button"
@@ -36,7 +39,7 @@ const DualEmbed: FC = () => {
 
       {sheetsEmbed && (
         <button
-          onClick={() => setShowAirtable("false")}
+          onClick={() => setShowAirtable(false)}
           data-modal-target="connect-sheets-modal"
           className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2 mr-2 "
           type="button"
@@ -45,21 +48,10 @@ const DualEmbed: FC = () => {
         </button>
       )}
 
-      <button
-        onClick={() => setShowAirtable("default")}
-        data-modal-target="connect-sheets-modal"
-        className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2 mr-2 "
-        type="button"
-      >
-        +
-      </button>
-
-      {/* map over every google sheet and airtable submission here */}
-
       <div className="rounded-xl bg-white px-6 py-6 h-[30rem]">
         <div className="flex">
           <h2 className="text-xl font-semibold mr-auto pb-5">Your Deal Flow</h2>
-          {showAirtable == "default" && (
+          {!airtableViewId && (
             <button
               onClick={() => setShowConnectAirtableModal(true)}
               data-modal-target="connect-airtable-modal"
@@ -69,7 +61,7 @@ const DualEmbed: FC = () => {
               Connect Airtable
             </button>
           )}
-          {showAirtable == "default" && (
+          {!sheetsEmbed && (
             <button
               onClick={() => setShowConnectSheetsModal(true)}
               data-modal-target="connect-sheets-modal"
@@ -77,6 +69,27 @@ const DualEmbed: FC = () => {
               type="button"
             >
               Connect Google Sheets
+            </button>
+          )}
+
+          {airtableViewId && showAirtable && (
+            <button
+              onClick={() => setShowConnectAirtableModal(true)}
+              data-modal-target="connect-airtable-modal"
+              className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
+              type="button"
+            >
+              Import new Airtable
+            </button>
+          )}
+          {sheetsEmbed && !showAirtable && (
+            <button
+              onClick={() => setShowConnectSheetsModal(true)}
+              data-modal-target="connect-sheets-modal"
+              className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
+              type="button"
+            >
+              Import new sheet
             </button>
           )}
 
@@ -90,9 +103,9 @@ const DualEmbed: FC = () => {
             </button>
           </Link>
         </div>
-        {airtableViewId && showAirtable == "true" ? (
+        {airtableViewId && showAirtable ? (
           <AirtableEmbed viewId={airtableViewId} />
-        ) : sheetsEmbed && showAirtable == "false" ? (
+        ) : sheetsEmbed && !showAirtable ? (
           <GoogleSheetsEmbed sheetsEmbed={sheetsEmbed} />
         ) : (
           <div className="flex h-3/5 items-center justify-center">
@@ -167,7 +180,7 @@ const DualEmbed: FC = () => {
                 </div>
                 <form
                   className="space-y-6"
-                  action="/api/multipleairtable"
+                  action="/api/airtable"
                   method="post"
                 >
                   <div>
@@ -271,38 +284,22 @@ const DualEmbed: FC = () => {
               </div>
               <form
                 className="space-y-6"
-                action="/api/multiplegoogle"
+                action="/api/googlesheets"
                 method="post"
               >
                 <div>
                   <label
-                    htmlFor="googleEmbed"
+                    htmlFor="sheetsEmbed"
                     className="block mb-2 text-sm font-medium text-gray-900"
                   >
                     Your published Google Sheets link
                   </label>
                   <input
                     type="text"
-                    name="googleEmbed"
-                    id="googleEmbed"
+                    name="sheetsEmbed"
+                    id="sheetsEmbed"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                     placeholder="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwZClgSjoktofgs3EUkwhGH9poRo4LdiX25pDzcBrnkDK_Dfkx9tiZP699etvlOL6Bs-MU8VxhVHyF/pubhtml"
-                    required
-                  ></input>
-                </div>
-                <div>
-                  <label
-                    htmlFor="sheetName"
-                    className="block mb-2 text-sm font-medium text-gray-900"
-                  >
-                    What should we call your sheet?
-                  </label>
-                  <input
-                    type="text"
-                    name="sheetName"
-                    id="sheetName"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                    placeholder="John's CRM"
                     required
                   ></input>
                 </div>
@@ -313,7 +310,6 @@ const DualEmbed: FC = () => {
                     className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 ml-auto"
                   />
                 </div>
-                
               </form>
             </div>
           </div>

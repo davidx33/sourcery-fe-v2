@@ -123,10 +123,10 @@ model statsDashboard {
 
 model GoogleSheetsIds {
   id          String @id @default(cuid())
-  googleEmbed String
   user        User   @relation(fields: [userId], references: [id])
   userId      String
   sheetName   String
+  googleEmbed String
 }
 
 model AirtableViewIds {

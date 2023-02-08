@@ -8,7 +8,7 @@ import { Message, RecommendedCompany } from "@prisma/client";
 import Layout from "../components/Layout";
 import ProfilePhoto from "../components/ProfilePhoto";
 import RecommendedCompanyCard from "../components/RecommendedCompanyCard";
-import DualEmbed from "../components/DualEmbed";
+import StableEmbed from "../components/StableEmbed";
 
 import Info from "../components/svgs/info";
 
@@ -64,7 +64,7 @@ const Profile: NextPage<Props> = ({ recommendedCompanies }) => {
         {/* left side: deal flow + recommended */}
         <div className="col-span-3">
           <div className="md:h-2/3 bg-slate-50 border border-slate-300 rounded-lg p-3 mb-4 md:mr-4">
-            <DualEmbed />
+            <StableEmbed />
           </div>
           <div className="md:h-1/3 bg-slate-50 border border-slate-300 rounded-lg p-3 mb-4 md:mr-4">
             <h2 className="md:text-xl text-slate-700 font-semibold mb-3">

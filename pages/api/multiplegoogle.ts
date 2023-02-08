@@ -3,10 +3,9 @@ import { getSession } from "next-auth/react";
 import prisma from "../../lib/prisma";
 
 type Data = {
-  airtableEmbed: string;
-  tabName: string;
+  sheetName: string;
+  googleEmbed: string;
 };
-
 type Error = {
   error: string;
 };
@@ -22,18 +21,18 @@ export default async function handler(
       .send({ error: "please authenticate to access this view" });
   }
   if (req.method === "POST" && session?.user?.email) {
-    const { tabName, airtableEmbed } = req.body;
-    await prisma.airtableViewIds.create({
+    const { sheetName, googleEmbed } = req.body;
+    await prisma.googleSheetsIds.create({
       data: {
         user: { connect: { email: session.user.email } },
-        tabName: tabName,
-        airtableEmbed: airtableEmbed
+        sheetName: sheetName,
+        googleEmbed: googleEmbed,
       },
     });
+    res.redirect(307, '/profile');
     res.status(200).json({
-      airtableEmbed: airtableEmbed,
-      tabName: tabName
+      sheetName: sheetName,
+      googleEmbed: googleEmbed,
     });
   }
 }
-
