@@ -1,8 +1,11 @@
 import { useState } from "react";
-import Link from "next/link";
+
 import type { NextPage } from "next";
+import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
+
 import Hamburger from "./svgs/hamburger";
+import MessagesBox from "./MessageBox";
 import ProfilePhoto from "./ProfilePhoto";
 import SignUpButton from "./SignUpButton";
 
@@ -36,27 +39,30 @@ const Navbar: NextPage = () => {
 
   if (session) {
     content = (
-      <div className="flex items-center py-2 px-6 rounded-3xl border border-slate-300">
-        <button onClick={() => setShowDropdown(!showDropdown)} className="relative">
-          <Hamburger />
-          <div id="dropdownInformation" className={(showDropdown ? "" : "hidden ") + "absolute right-0 z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"}>
-            <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-              <div>{session?.user?.name}</div>
-              <div className="font-medium truncate">{session?.user?.email}</div>
+      <div className="flex items-center">
+        <MessagesBox hasUnread={true} messages={[]} />
+        <div className="ml-4 flex py-2 px-6 rounded-3xl border border-slate-300">
+          <button onClick={() => setShowDropdown(!showDropdown)} className="relative">
+            <Hamburger />
+            <div id="dropdownInformation" className={(showDropdown ? "" : "hidden ") + "absolute right-0 z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"}>
+              <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                <div>{session?.user?.name}</div>
+                <div className="font-medium truncate">{session?.user?.email}</div>
+              </div>
+              <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+                <li>
+                  <Link href="/profile" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</Link>
+                </li>
+              </ul>
+              <div className="py-2">
+                <a onClick={() => signOut()} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign Out</a>
+              </div>
             </div>
-            <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
-              <li>
-                <Link href="/profile" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</Link>
-              </li>
-            </ul>
-            <div className="py-2">
-              <a onClick={() => signOut()} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign Out</a>
-            </div>
-          </div>
-        </button>
-        <Link href="/profile" className="ml-2">
-          <ProfilePhoto radius={15} src={session?.user?.image} name={session?.user?.name} />
-        </Link>
+          </button>
+          <Link href="/profile" className="ml-2">
+            <ProfilePhoto radius={15} src={session?.user?.image} name={session?.user?.name} />
+          </Link>
+        </div>
       </div>
     );
   }

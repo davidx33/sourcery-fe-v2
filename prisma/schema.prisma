@@ -104,6 +104,13 @@ model ReviewThese {
   url         String @default("linkedin.com")
 }
 
+model RecommendedCompany {
+  id       String @id @default(cuid())
+  name     String
+  industry String
+  url      String
+}
+
 model statsDashboard {
   id                     String @id @default(cuid())
   totalViableSources     String
