@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import type { NextPage } from "next";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
@@ -11,7 +9,6 @@ import SignUpButton from "./SignUpButton";
 
 const Navbar: NextPage = () => {
   const { data: session, status } = useSession();
-  const [showDropdown, setShowDropdown] = useState(false);
 
   let content;
 
@@ -42,9 +39,9 @@ const Navbar: NextPage = () => {
       <div className="flex items-center">
         <MessagesBox hasUnread={true} messages={[]} />
         <div className="ml-4 flex py-2 px-6 rounded-3xl border border-slate-300">
-          <button onClick={() => setShowDropdown(!showDropdown)} className="relative">
+          <div className="group relative pt-1">
             <Hamburger />
-            <div id="dropdownInformation" className={(showDropdown ? "" : "hidden ") + "absolute right-0 z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"}>
+            <div id="dropdownInformation" className="hidden group-hover:block absolute right-0 z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
               <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
                 <div>{session?.user?.name}</div>
                 <div className="font-medium truncate">{session?.user?.email}</div>
@@ -58,7 +55,7 @@ const Navbar: NextPage = () => {
                 <a onClick={() => signOut()} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign Out</a>
               </div>
             </div>
-          </button>
+          </div>
           <Link href="/profile" className="ml-2">
             <ProfilePhoto radius={15} src={session?.user?.image} name={session?.user?.name} />
           </Link>
