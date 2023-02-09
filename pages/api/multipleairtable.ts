@@ -30,6 +30,7 @@ export default async function handler(
         airtableEmbed: airtableEmbed
       },
     });
+    res.redirect(307, '/profile');
     res.status(200).json({
       airtableEmbed: airtableEmbed,
       tabName: tabName

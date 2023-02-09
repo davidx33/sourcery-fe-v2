@@ -3,63 +3,123 @@ import { useSession } from "next-auth/react";
 import AirtableEmbed from "./AirtableEmbed";
 import GoogleSheetsEmbed from "./GoogleSheetsEmbed";
 import Link from "next/link";
+import Hamburger from "./svgs/hamburger";
 
 const DualEmbed: FC = () => {
   const { data: session } = useSession();
-  const [showConnectAirtableModal, setShowConnectAirtableModal] = useState(false);
+  const [showConnectAirtableModal, setShowConnectAirtableModal] =
+    useState(false);
   const [showConnectSheetsModal, setShowConnectSheetsModal] = useState(false);
-  const [showAirtable, setShowAirtable] = useState("default");
-  let airtableViewId;
-  let sheetsEmbed;
+  const [showAddCRM, setShowAddCRM] = useState(true);
+  let airtableEmbed;
+  let tabName;
+  let googleEmbed;
+  let sheetName;
 
   if (!session) {
     return <></>;
   }
   // @ts-ignore: bug where types don't match from prisma schema
-  airtableViewId = session?.user?.airtableViewId;
+  // airtableEmbed = session?.user?.googleSheetsIds.airtableEmbed;
 
   // @ts-ignore: bug where types don't match from prisma schema
-  sheetsEmbed = session?.user?.sheetsEmbed;
 
   return (
     <div>
-      {airtableViewId && (
+      <div className="flex flex-row justify-between">
         <button
-          onClick={() => setShowAirtable("true")}
           data-modal-target="connect-sheets-modal"
-          className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2 mr-2 "
+          className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-lg px-5 py-2 mr-2 "
           type="button"
         >
-          Your Airtable
+          +
         </button>
-      )}
-
-      {sheetsEmbed && (
-        <button
-          onClick={() => setShowAirtable("false")}
-          data-modal-target="connect-sheets-modal"
-          className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2 mr-2 "
-          type="button"
-        >
-          Your Google Sheet
-        </button>
-      )}
-
-      <button
-        onClick={() => setShowAirtable("default")}
-        data-modal-target="connect-sheets-modal"
-        className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2 mr-2 "
-        type="button"
-      >
-        +
-      </button>
+        <div className="flex flex-row">
+          <div className="group relative pt-1 pr-5">
+            <div className="flex flex-row items-center cursor-pointer focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2 mr-2 ">
+              <h2 className="pr-2">View Your Airtables</h2>
+              <Hamburger />
+            </div>
+            <div
+              id="dropdownInformation"
+              className="hidden group-hover:block absolute right-0 z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+            >
+              <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                <div>{session?.user?.name}</div>
+                <div className="font-medium truncate">
+                  {session?.user?.email}
+                </div>
+              </div>
+              <ul
+                className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="dropdownInformationButton"
+              >
+                <li>
+                  <Link
+                    href="/profile"
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
+                    Profile
+                  </Link>
+                </li>
+              </ul>
+              <div className="py-2">
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                >
+                  Sign Out
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="group relative pt-1">
+            <div className="flex cursor-pointer flex-row items-center  focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2 mr-2">
+              <h2 className="pr-2">View Your Google Sheets</h2>
+              <Hamburger />
+            </div>
+            <div
+              id="dropdownInformation"
+              className="hidden group-hover:block absolute right-0 z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+            >
+              <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                <div>{session?.user?.name}</div>
+                <div className="font-medium truncate">
+                  {session?.user?.email}
+                </div>
+              </div>
+              <ul
+                className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="dropdownInformationButton"
+              >
+                <li>
+                  <Link
+                    href="/profile"
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
+                    Profile
+                  </Link>
+                </li>
+              </ul>
+              <div className="py-2">
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                >
+                  Sign Out
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* map over every google sheet and airtable submission here */}
 
       <div className="rounded-xl bg-white px-6 py-6 h-[30rem]">
         <div className="flex">
           <h2 className="text-xl font-semibold mr-auto pb-5">Your Deal Flow</h2>
-          {showAirtable == "default" && (
+          {showAddCRM && (
             <button
               onClick={() => setShowConnectAirtableModal(true)}
               data-modal-target="connect-airtable-modal"
@@ -69,7 +129,7 @@ const DualEmbed: FC = () => {
               Connect Airtable
             </button>
           )}
-          {showAirtable == "default" && (
+          {showAddCRM && (
             <button
               onClick={() => setShowConnectSheetsModal(true)}
               data-modal-target="connect-sheets-modal"
@@ -90,17 +150,13 @@ const DualEmbed: FC = () => {
             </button>
           </Link>
         </div>
-        {airtableViewId && showAirtable == "true" ? (
-          <AirtableEmbed viewId={airtableViewId} />
-        ) : sheetsEmbed && showAirtable == "false" ? (
-          <GoogleSheetsEmbed sheetsEmbed={sheetsEmbed} />
-        ) : (
-          <div className="flex h-3/5 items-center justify-center">
-            <h1 className="text-2xl text-gray-500">
-              Please connect an existing CRM or use our template
-            </h1>
-          </div>
-        )}
+
+        <div className="flex h-3/5 items-center justify-center">
+          <h1 className="text-2xl text-center text-gray-500">
+            Please connect the platform you use for sourcing or get started with
+            our template
+          </h1>
+        </div>
 
         {/* Connect Airtable Modal */}
         <div
@@ -172,17 +228,33 @@ const DualEmbed: FC = () => {
                 >
                   <div>
                     <label
-                      htmlFor="airtableViewId"
+                      htmlFor="airtableEmbed"
                       className="block mb-2 text-sm font-medium text-gray-900"
                     >
                       Your Airtable View ID
                     </label>
                     <input
                       type="text"
-                      name="airtableViewId"
-                      id="airtableViewId"
+                      name="airtableEmbed"
+                      id="airtableEmbed"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                       placeholder="shrxLkMH2qjXWP7fC"
+                      required
+                    ></input>
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="airtableEmbed"
+                      className="block mb-2 text-sm font-medium text-gray-900"
+                    >
+                      What should we call you Airtable sheet?
+                    </label>
+                    <input
+                      type="text"
+                      name="tabName"
+                      id="tabName"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                      placeholder="Lucy's Airtable"
                       required
                     ></input>
                   </div>
@@ -313,7 +385,6 @@ const DualEmbed: FC = () => {
                     className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 ml-auto"
                   />
                 </div>
-                
               </form>
             </div>
           </div>
