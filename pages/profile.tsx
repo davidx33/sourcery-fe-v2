@@ -70,7 +70,7 @@ const Profile: NextPage<Props> = ({ recommendedCompanies }) => {
             <h2 className="md:text-xl text-slate-700 font-semibold mb-3">
               Recommended
             </h2>
-            <div className="flex py-5 px-10 h-4/5 items-center">
+            <div className="flex justify-center py-5 px-10 h-4/5 items-center">
               <div className="grid grid-cols-3 md:grid-cols-6 gap-5">
                 {recommendedCompanies?.map((company: RecommendedCompany) => {
                   return (
@@ -108,7 +108,7 @@ const Profile: NextPage<Props> = ({ recommendedCompanies }) => {
                 </div>
               </span>
             </div>
-            <div>
+            <div className="flex flex-col justify-between">
               {/* interview invites */}
               <div className="bg-blue-100 rounded-lg mb-3">
                 <div className="flex">
@@ -140,7 +140,7 @@ const Profile: NextPage<Props> = ({ recommendedCompanies }) => {
               </div>
               <Link
                 href="/viability"
-                className="p-3 flex  bg-slate-100 border border-slate-300 hover:bg-slate-200 text-slate-800 text-sm font-semibold rounded-xl"
+                className="p-3 flex  bg-slate-200  hover:bg-slate-300 text-slate-700 font-semibold rounded-xl"
               >
                 See Sourcing Guidelines
                 <svg
